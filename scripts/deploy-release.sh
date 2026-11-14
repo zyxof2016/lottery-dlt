@@ -41,6 +41,24 @@ test ! -e "$backup"
 mkdir -m 700 "$backup"
 cp "$APP/shared/service.env" "$backup/service.env"
 chmod 600 "$backup/service.env"
+sync_was_active=$(systemctl is-active lottery-dlt-sync.timer || true)
+backup_was_active=$(systemctl is-active lottery-dlt-backup.timer || true)
+rollback() {
+    trap - ERR
+    set +e
+    sudo -n systemctl stop lottery-dlt.service
+    ln -sfn "$previous" "$APP/current.rollback"
+    mv -Tf "$APP/current.rollback" "$APP/current"
+    sudo -n systemctl start lottery-dlt.service
+    if [ "$sync_was_active" = active ]; then sudo -n systemctl start lottery-dlt-sync.timer; fi
+    if [ "$backup_was_active" = active ]; then sudo -n systemctl start lottery-dlt-backup.timer; fi
+    printf 'Deployment failed; previous release restored. Database backup remains at %s\n' "$backup" >&2
+    exit 1
+}
+trap rollback ERR
+sudo -n systemctl stop lottery-dlt-sync.timer lottery-dlt-backup.timer
+while systemctl is-active --quiet lottery-dlt-sync.service; do sleep 1; done
+sudo -n systemctl stop lottery-dlt.service
 python3 - "$APP" "$backup/database.sqlite3" <<'PY'
 import pathlib,sqlite3,sys
 source=sqlite3.connect(f"file:{sys.argv[1]}/shared/data/lottery-dlt.sqlite3?mode=ro", uri=True)
@@ -64,22 +82,6 @@ for table,cols in {
     out[table]={"count":len(rows),"sha256":hashlib.sha256(repr(rows).encode()).hexdigest()}
 json.dump(out, open(sys.argv[2],"w"), indent=2)
 PY
-sync_was_active=$(systemctl is-active lottery-dlt-sync.timer || true)
-backup_was_active=$(systemctl is-active lottery-dlt-backup.timer || true)
-rollback() {
-    trap - ERR
-    set +e
-    sudo -n systemctl stop lottery-dlt.service
-    ln -sfn "$previous" "$APP/current.rollback"
-    mv -Tf "$APP/current.rollback" "$APP/current"
-    sudo -n systemctl start lottery-dlt.service
-    if [ "$sync_was_active" = active ]; then sudo -n systemctl start lottery-dlt-sync.timer; fi
-    if [ "$backup_was_active" = active ]; then sudo -n systemctl start lottery-dlt-backup.timer; fi
-    printf 'Deployment failed; previous release restored. Database backup remains at %s\n' "$backup" >&2
-    exit 1
-}
-trap rollback ERR
-sudo -n systemctl stop lottery-dlt-sync.timer lottery-dlt-sync.service lottery-dlt.service
 ln -s "$release" "$APP/current.next"
 mv -Tf "$APP/current.next" "$APP/current"
 sudo -n systemctl start lottery-dlt.service
