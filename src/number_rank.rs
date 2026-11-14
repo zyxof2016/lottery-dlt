@@ -8,6 +8,7 @@ use serde_json::{json, Value};
 use sha2::{Digest, Sha256};
 use std::collections::BTreeSet;
 
+const BASE: &[&str] = &["hot", "cold", "omission", "follow", "avoid", "band"];
 const ALGORITHMS: &[(&str, &str)] = &[
     ("hot", "热号"),
     ("cold", "冷号"),
@@ -15,8 +16,14 @@ const ALGORITHMS: &[(&str, &str)] = &[
     ("follow", "跟随上期"),
     ("avoid", "避开上期"),
     ("band", "分区轮动"),
+    ("cover_bottleneck", "覆盖瓶颈"),
+    ("cover_partner", "同出补齐"),
+    ("cover_blend", "全覆盖融合"),
+    ("cover_recent", "近期全覆盖"),
     ("uniform", "均匀随机对照"),
 ];
+const SIGNAL_CAP: i64 = 1_000;
+const COVER_BUMP: i64 = 1_000;
 
 struct Zone {
     name: &'static str,
@@ -86,7 +93,7 @@ pub fn report(
         "zones": zones,
         "pools": pool_rows,
         "issues": issues,
-        "note": "排序只用目标期之前的开奖。热号和冷号是同一出现次数的两个方向。名次不是中奖概率，也不替换已经冻结的号码池。",
+        "note": "排序只用目标期之前的开奖。原有排序仍按各自方向，但会把曾经拖长全覆盖前缀的开奖号提前。覆盖瓶颈、同出补齐、全覆盖融合和近期全覆盖直接追求更短的号码池。均匀随机对照不参与这项调整。名次不是中奖概率，也不替换已经冻结的号码池。",
     }))
 }
 
@@ -130,41 +137,10 @@ struct History {
 }
 
 fn history(draws: &[Draw], seed: u64) -> History {
-    let mut front_run = Running::new(FRONT.upper as usize);
-    let mut back_run = Running::new(BACK.upper as usize);
-    let mut front_sum = vec![0.0; ALGORITHMS.len()];
-    let mut back_sum = vec![0.0; ALGORITHMS.len()];
-    let mut front_count = vec![0.0; ALGORITHMS.len()];
-    let mut back_count = vec![0.0; ALGORITHMS.len()];
-    for (index, draw) in draws.iter().enumerate() {
-        if index > 0 {
-            let front_signals = front_run.signals(true);
-            let back_signals = back_run.signals(false);
-            for (algo_index, (name, _)) in ALGORITHMS.iter().enumerate() {
-                if let Some(need) = prefix_need(
-                    &order(&front_signals, seed, &draw.issue, &FRONT, name),
-                    &draw.front,
-                    FRONT.drawn,
-                ) {
-                    front_sum[algo_index] += need as f64;
-                    front_count[algo_index] += 1.0;
-                }
-                if let Some(need) = prefix_need(
-                    &order(&back_signals, seed, &draw.issue, &BACK, name),
-                    &draw.back,
-                    BACK.drawn,
-                ) {
-                    back_sum[algo_index] += need as f64;
-                    back_count[algo_index] += 1.0;
-                }
-            }
-        }
-        front_run.observe(&draw.front);
-        back_run.observe(&draw.back);
-    }
+    let refs: Vec<&Draw> = draws.iter().collect();
     History {
-        front: means(&front_sum, &front_count),
-        back: means(&back_sum, &back_count),
+        front: replay(&refs, seed, &FRONT).means,
+        back: replay(&refs, seed, &BACK).means,
     }
 }
 
@@ -183,17 +159,13 @@ fn zone_report(
     issue: &str,
     means: &[Option<f64>],
 ) -> Value {
-    let mut running = Running::new(zone.upper as usize);
-    let front = zone.name == "front";
-    for draw in prior {
-        running.observe(if front { &draw.front } else { &draw.back });
-    }
-    let signals = running.signals(front);
+    let mut fitted = replay(prior, seed, zone);
+    fitted.memory.decay();
     let algorithms: Vec<Value> = ALGORITHMS
         .iter()
         .enumerate()
         .map(|(index, (name, label))| {
-            let ranking = order(&signals, seed, issue, zone, name);
+            let ranking = rank_one(&fitted.signals, &fitted.memory, seed, issue, zone, name);
             let need = drawn.map(|numbers| {
                 zone.targets
                     .iter()
@@ -273,24 +245,210 @@ impl Running {
     }
 }
 
-fn order(signals: &Signals, seed: u64, issue: &str, zone: &Zone, algorithm: &str) -> Vec<u8> {
+struct Scale {
+    max_frequency: i64,
+    max_omission: i64,
+    max_band: i64,
+}
+
+struct Memory {
+    pull: Vec<Vec<i64>>,
+    bottleneck: Vec<i64>,
+    partner: Vec<i64>,
+    recent: Vec<i64>,
+    blend: Vec<i64>,
+}
+
+impl Memory {
+    fn new(upper: usize) -> Self {
+        Self {
+            pull: (0..BASE.len()).map(|_| vec![0; upper]).collect(),
+            bottleneck: vec![0; upper],
+            partner: vec![0; upper],
+            recent: vec![0; upper],
+            blend: vec![SIGNAL_CAP; BASE.len()],
+        }
+    }
+
+    fn decay(&mut self) {
+        let soften = |values: &mut [i64]| {
+            for value in values {
+                *value = *value * 9 / 10;
+            }
+        };
+        for pull in &mut self.pull {
+            soften(pull);
+        }
+        soften(&mut self.bottleneck);
+        soften(&mut self.partner);
+        soften(&mut self.blend);
+        for value in &mut self.recent {
+            *value /= 2;
+        }
+    }
+
+    fn learn(&mut self, rankings: &[Vec<u8>], winners: &[u8], zone: &Zone) {
+        for (index, ranking) in rankings.iter().take(BASE.len()).enumerate() {
+            if let Some(worst) = worst_winner(ranking, winners) {
+                let at = worst as usize - 1;
+                self.pull[index][at] += COVER_BUMP;
+                self.bottleneck[at] += COVER_BUMP;
+                self.recent[at] += COVER_BUMP;
+            }
+            if let Some(prefix) = prefix_need(ranking, winners, zone.drawn) {
+                self.blend[index] += zone.upper as i64 * SIGNAL_CAP / prefix as i64;
+            }
+        }
+        let Some(ranking) = rankings.first() else {
+            return;
+        };
+        let Some(worst) = worst_winner(ranking, winners) else {
+            return;
+        };
+        self.partner[worst as usize - 1] += COVER_BUMP;
+        for number in winners {
+            if *number != worst {
+                self.partner[*number as usize - 1] += COVER_BUMP / 4;
+            }
+        }
+    }
+}
+
+struct Fitted {
+    memory: Memory,
+    signals: Signals,
+    means: Vec<Option<f64>>,
+}
+
+fn replay(draws: &[&Draw], seed: u64, zone: &Zone) -> Fitted {
+    let mut running = Running::new(zone.upper as usize);
+    let mut memory = Memory::new(zone.upper as usize);
+    let mut sums = vec![0.0; ALGORITHMS.len()];
+    let mut counts = vec![0.0; ALGORITHMS.len()];
+    let front = zone.name == "front";
+    for (index, draw) in draws.iter().enumerate() {
+        let winners = if front { &draw.front } else { &draw.back };
+        if index > 0 {
+            memory.decay();
+            let signals = running.signals(front);
+            let rankings = rank_all(&signals, &memory, seed, &draw.issue, zone);
+            for (algo_index, ranking) in rankings.iter().enumerate() {
+                if let Some(need) = prefix_need(ranking, winners, zone.drawn) {
+                    sums[algo_index] += need as f64;
+                    counts[algo_index] += 1.0;
+                }
+            }
+            memory.learn(&rankings, winners, zone);
+        }
+        running.observe(winners);
+    }
+    Fitted {
+        memory,
+        signals: running.signals(front),
+        means: means(&sums, &counts),
+    }
+}
+
+fn rank_all(
+    signals: &Signals,
+    memory: &Memory,
+    seed: u64,
+    issue: &str,
+    zone: &Zone,
+) -> Vec<Vec<u8>> {
+    ALGORITHMS
+        .iter()
+        .map(|(name, _)| rank_one(signals, memory, seed, issue, zone, name))
+        .collect()
+}
+
+fn rank_one(
+    signals: &Signals,
+    memory: &Memory,
+    seed: u64,
+    issue: &str,
+    zone: &Zone,
+    algorithm: &str,
+) -> Vec<u8> {
+    let scale = Scale {
+        max_frequency: signals.frequency.iter().copied().max().unwrap_or(0),
+        max_omission: signals.omission.iter().copied().max().unwrap_or(0),
+        max_band: signals.bands.iter().copied().max().unwrap_or(0),
+    };
     let mut numbers: Vec<u8> = (1..=zone.upper).collect();
     let mut rng = ChaCha20Rng::from_seed(seed_bytes(seed, issue, zone.name, algorithm));
     numbers.shuffle(&mut rng);
-    let front = zone.name == "front";
-    numbers.sort_by_key(|&number| {
-        let index = number as usize - 1;
-        match algorithm {
-            "hot" => -signals.frequency[index],
-            "cold" => signals.frequency[index],
-            "omission" => -signals.omission[index],
-            "follow" => i64::from(!signals.previous.contains(&number)),
-            "avoid" => i64::from(signals.previous.contains(&number)),
-            "band" => signals.bands[band_index(number, front)],
-            _ => 0,
-        }
+    numbers.sort_by(|&left, &right| {
+        score(signals, memory, &scale, zone, algorithm, right)
+            .cmp(&score(signals, memory, &scale, zone, algorithm, left))
     });
     numbers
+}
+
+fn score(
+    signals: &Signals,
+    memory: &Memory,
+    scale: &Scale,
+    zone: &Zone,
+    algorithm: &str,
+    number: u8,
+) -> i64 {
+    let index = number as usize - 1;
+    let directed = signal_score(signals, scale, zone, algorithm, number);
+    match algorithm {
+        "cover_bottleneck" => memory.bottleneck[index],
+        "cover_partner" => memory.partner[index],
+        "cover_recent" => memory.recent[index],
+        "cover_blend" => BASE
+            .iter()
+            .enumerate()
+            .map(|(slot, name)| {
+                memory.blend[slot]
+                    * (signal_score(signals, scale, zone, name, number) + memory.pull[slot][index])
+                    / SIGNAL_CAP
+            })
+            .sum(),
+        "uniform" => 0,
+        _ => {
+            let slot = BASE.iter().position(|name| *name == algorithm).unwrap_or(0);
+            directed + memory.pull[slot][index]
+        }
+    }
+}
+
+fn signal_score(signals: &Signals, scale: &Scale, zone: &Zone, algorithm: &str, number: u8) -> i64 {
+    let index = number as usize - 1;
+    let frequency = signals.frequency[index];
+    let front = zone.name == "front";
+    match algorithm {
+        "hot" => scaled(frequency, scale.max_frequency),
+        "cold" => scaled(scale.max_frequency - frequency, scale.max_frequency),
+        "omission" => scaled(signals.omission[index], scale.max_omission),
+        "follow" => i64::from(signals.previous.contains(&number)) * SIGNAL_CAP,
+        "avoid" => i64::from(!signals.previous.contains(&number)) * SIGNAL_CAP,
+        "band" => {
+            let total = signals.bands[band_index(number, front)];
+            scaled(scale.max_band - total, scale.max_band)
+        }
+        _ => 0,
+    }
+}
+
+fn scaled(value: i64, max: i64) -> i64 {
+    if max <= 0 {
+        0
+    } else {
+        value * SIGNAL_CAP / max
+    }
+}
+
+fn worst_winner(ranking: &[u8], winners: &[u8]) -> Option<u8> {
+    winners.iter().copied().max_by_key(|number| {
+        ranking
+            .iter()
+            .position(|item| item == number)
+            .unwrap_or(usize::MAX)
+    })
 }
 
 fn band_index(number: u8, front: bool) -> usize {
@@ -355,20 +513,61 @@ mod tests {
         }
     }
 
+    fn algorithm<'a>(report: &'a Value, name: &str) -> &'a Value {
+        report["zones"]["front"]["algorithms"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .find(|item| item["name"] == name)
+            .unwrap()
+    }
+
+    fn position(report: &Value, name: &str, number: u8) -> usize {
+        algorithm(report, name)["ranking"]
+            .as_array()
+            .unwrap()
+            .iter()
+            .position(|item| item.as_u64() == Some(u64::from(number)))
+            .unwrap()
+    }
+
     #[test]
-    fn hot_rank_uses_only_earlier_draws_and_names_the_repeated_number_first() {
+    fn hot_without_cover_feedback_keeps_the_seen_numbers_ahead_of_the_target() {
         let draws = vec![
             draw("26001", [1, 2, 3, 4, 35], [1, 12]),
-            draw("26002", [5, 6, 7, 8, 35], [2, 12]),
-            draw("26003", [9, 10, 11, 12, 13], [3, 4]),
+            draw("26002", [9, 10, 11, 12, 13], [3, 4]),
+        ];
+        let report = report(&draws, Some("26002"), None, 7, &[]).unwrap();
+        let hot = algorithm(&report, "hot")["ranking"].as_array().unwrap();
+        let seen: std::collections::BTreeSet<u64> = [1, 2, 3, 4, 35].into_iter().collect();
+        let top: std::collections::BTreeSet<u64> = hot
+            .iter()
+            .take(5)
+            .map(|item| item.as_u64().unwrap())
+            .collect();
+        assert_eq!(top, seen);
+        assert_eq!(report["data_cutoff"], "26001");
+        assert_ne!(algorithm(&report, "cold")["ranking"][0], 35);
+    }
+
+    #[test]
+    fn cover_adjustment_pulls_forward_the_number_that_lengthened_the_pool() {
+        let draws = vec![
+            draw("26001", [1, 2, 3, 4, 5], [1, 2]),
+            draw("26002", [1, 2, 3, 4, 35], [1, 12]),
+            draw("26003", [6, 7, 8, 9, 10], [3, 4]),
         ];
         let report = report(&draws, Some("26003"), None, 7, &[]).unwrap();
-        let hot = &report["zones"]["front"]["algorithms"][0];
-        assert_eq!(hot["name"], "hot");
-        assert_eq!(hot["ranking"][0], 35);
         assert_eq!(report["data_cutoff"], "26002");
-        assert!(hot["need"][2][1].as_u64().unwrap() >= 1);
-        assert_ne!(report["zones"]["front"]["algorithms"][1]["ranking"][0], 35);
+        assert_eq!(algorithm(&report, "hot")["ranking"][0], 35);
+        assert_eq!(algorithm(&report, "cover_partner")["ranking"][0], 35);
+        assert!(
+            position(&report, "cover_bottleneck", 35) < position(&report, "cover_bottleneck", 6)
+        );
+        assert!(position(&report, "cover_blend", 35) < position(&report, "cover_blend", 6));
+        assert!(position(&report, "cover_recent", 35) < position(&report, "cover_recent", 6));
+        assert_ne!(algorithm(&report, "cold")["ranking"][0], 35);
+        assert_eq!(algorithm(&report, "uniform")["name"], "uniform");
     }
 
     #[test]
