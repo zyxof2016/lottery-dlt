@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily verified DLT database backup
+[Timer]
+OnCalendar=*-*-* 03:10:00 Asia/Shanghai
+Persistent=true
+Unit=lottery-dlt-backup.service
+[Install]
+WantedBy=timers.target

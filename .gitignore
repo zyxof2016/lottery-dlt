@@ -1,0 +1,9 @@
+/target/
+/data/*
+!/data/.gitkeep
+/backups/
+/test-results/
+.env
+*.sqlite3*
+__pycache__/
+.cursor/hooks/release.log

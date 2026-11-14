@@ -1,0 +1,11 @@
+[Unit]
+Description=Refresh DLT official draw cache every 10 minutes
+
+[Timer]
+OnCalendar=*:0/10
+RandomizedDelaySec=60
+Persistent=true
+Unit=lottery-dlt-sync.service
+
+[Install]
+WantedBy=timers.target

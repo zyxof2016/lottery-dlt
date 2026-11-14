@@ -1,0 +1,3864 @@
+{
+  "data_hash": "7a39aab079fb24daee82dbd1f01576e33fad566e95634ebc34902dbe1859824e",
+  "generator_version": "dlt-plan-v3",
+  "history_rows": 2935,
+  "note": "Read-only exploratory review, no real pre-draw records. Pair rotation is an offline structural candidate. Shared uniform draws evaluate fixed current ticket groups; MC intervals are simulation uncertainty only. Historical outcomes are not proof of predictive advantage. Recovery simulations exclude floating awards, promotions and tax.",
+  "seed": "11487001342290856536",
+  "window": 60,
+  "recent_300": [
+    {
+      "actual_back_pair_hit_rate": 0.06666666666666667,
+      "any_win_rate": 0.29,
+      "back_all_rate": 0.33666666666666667,
+      "both_all_rate": 0.013333333333333334,
+      "cost_fen": 300000,
+      "cost_per_issue_yuan": 10.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.03333333333333333,
+      "last_issue": "26117",
+      "mean_back_pool": 7.206666666666667,
+      "mean_back_union_hits": 1.1866666666666668,
+      "mean_distinct_back_pairs": 4.846666666666667,
+      "mean_front_pool": 18.826666666666668,
+      "mean_front_union_hits": 2.7466666666666666,
+      "name": "random_5",
+      "net_fen": -150900,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.5619047619047619,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.04666666666666667,
+      "recovery_rate_priced_subset": 0.07,
+      "total_prize_fen": 149100,
+      "unpriced_issues": 0,
+      "win_issues": 87
+    },
+    {
+      "actual_back_pair_hit_rate": 0.06,
+      "any_win_rate": 0.27666666666666667,
+      "back_all_rate": 0.6866666666666666,
+      "both_all_rate": 0.10333333333333333,
+      "cost_fen": 300000,
+      "cost_per_issue_yuan": 10.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.17,
+      "last_issue": "26117",
+      "mean_back_pool": 10.0,
+      "mean_back_union_hits": 1.6766666666666667,
+      "mean_distinct_back_pairs": 5.0,
+      "mean_front_pool": 25.0,
+      "mean_front_union_hits": 3.59,
+      "name": "coverage_5",
+      "net_fen": -247800,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.7523809523809524,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.02,
+      "recovery_rate_priced_subset": 0.03333333333333333,
+      "total_prize_fen": 52200,
+      "unpriced_issues": 0,
+      "win_issues": 83
+    },
+    {
+      "actual_back_pair_hit_rate": 0.07666666666666666,
+      "any_win_rate": 0.31,
+      "back_all_rate": 0.3933333333333333,
+      "both_all_rate": 0.04,
+      "cost_fen": 360000,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.08,
+      "last_issue": "26117",
+      "mean_back_pool": 8.03,
+      "mean_back_union_hits": 1.2766666666666666,
+      "mean_distinct_back_pairs": 5.8,
+      "mean_front_pool": 21.216666666666665,
+      "mean_front_union_hits": 2.99,
+      "name": "random_6",
+      "net_fen": -292800,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.6095238095238096,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.04,
+      "recovery_rate_priced_subset": 0.04,
+      "total_prize_fen": 67200,
+      "unpriced_issues": 0,
+      "win_issues": 93
+    },
+    {
+      "actual_back_pair_hit_rate": 0.08666666666666667,
+      "any_win_rate": 0.3933333333333333,
+      "back_all_rate": 1.0,
+      "both_all_rate": 0.4166666666666667,
+      "cost_fen": 360000,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.4166666666666667,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 6.0,
+      "mean_front_pool": 30.0,
+      "mean_front_union_hits": 4.266666666666667,
+      "name": "coverage_6",
+      "net_fen": -266800,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.8952380952380953,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.03666666666666667,
+      "recovery_rate_priced_subset": 0.03666666666666667,
+      "total_prize_fen": 93200,
+      "unpriced_issues": 0,
+      "win_issues": 118
+    },
+    {
+      "actual_back_pair_hit_rate": 0.1,
+      "any_win_rate": 0.39666666666666667,
+      "back_all_rate": 0.5,
+      "both_all_rate": 0.06,
+      "cost_fen": 420000,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.09666666666666666,
+      "last_issue": "26117",
+      "mean_back_pool": 8.686666666666667,
+      "mean_back_union_hits": 1.42,
+      "mean_distinct_back_pairs": 6.676666666666667,
+      "mean_front_pool": 23.17,
+      "mean_front_union_hits": 3.223333333333333,
+      "name": "random_7",
+      "net_fen": -303700,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.6633333333333333,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.05,
+      "recovery_rate_priced_subset": 0.05,
+      "total_prize_fen": 116300,
+      "unpriced_issues": 0,
+      "win_issues": 119
+    },
+    {
+      "actual_back_pair_hit_rate": 0.11333333333333333,
+      "any_win_rate": 0.42,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 420000,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "24120",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 6.89,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "coverage_7",
+      "net_fen": -287100,
+      "periods": 300,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.056666666666666664,
+      "recovery_rate_priced_subset": 0.06666666666666667,
+      "total_prize_fen": 132900,
+      "unpriced_issues": 0,
+      "win_issues": 126
+    },
+    {
+      "actual_back_pair_hit_rate": 0.2966666666666667,
+      "any_win_rate": 0.7333333333333333,
+      "back_all_rate": 0.96,
+      "both_all_rate": 0.7766666666666666,
+      "cost_fen": 1200000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.8133333333333334,
+      "last_issue": "26117",
+      "mean_back_pool": 11.76,
+      "mean_back_union_hits": 1.96,
+      "mean_distinct_back_pairs": 17.37,
+      "mean_front_pool": 33.4,
+      "mean_front_union_hits": 4.793333333333333,
+      "name": "random_20",
+      "net_fen": -913400,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.9647619047619047,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.013333333333333334,
+      "recovery_rate_priced_subset": 0.013333333333333334,
+      "total_prize_fen": 286600,
+      "unpriced_issues": 0,
+      "win_issues": 220
+    },
+    {
+      "actual_back_pair_hit_rate": 0.27666666666666667,
+      "any_win_rate": 0.7866666666666666,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 1200000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "24120",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 17.88,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "coverage_20",
+      "net_fen": -912200,
+      "periods": 300,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.01,
+      "recovery_rate_priced_subset": 0.01,
+      "total_prize_fen": 287800,
+      "unpriced_issues": 0,
+      "win_issues": 236
+    },
+    {
+      "actual_back_pair_hit_rate": 0.13333333333333333,
+      "any_win_rate": 0.44666666666666666,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 420000,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "24120",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 7.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "structural_7",
+      "net_fen": -320100,
+      "periods": 300,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.043333333333333335,
+      "recovery_rate_priced_subset": 0.05333333333333334,
+      "total_prize_fen": 99900,
+      "unpriced_issues": 0,
+      "win_issues": 134
+    },
+    {
+      "actual_back_pair_hit_rate": 0.3233333333333333,
+      "any_win_rate": 0.81,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 1200000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "24120",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 20.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "structural_20",
+      "net_fen": -951700,
+      "periods": 300,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.006666666666666667,
+      "recovery_rate_priced_subset": 0.006666666666666667,
+      "total_prize_fen": 248300,
+      "unpriced_issues": 0,
+      "win_issues": 243
+    },
+    {
+      "actual_back_pair_hit_rate": 0.01,
+      "any_win_rate": 0.09333333333333334,
+      "back_all_rate": 0.01,
+      "both_all_rate": 0.0,
+      "cost_fen": 360000,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 2.0,
+      "mean_back_union_hits": 0.32,
+      "mean_distinct_back_pairs": 1.0,
+      "mean_front_pool": 6.0,
+      "mean_front_union_hits": 0.8533333333333334,
+      "name": "compound_6_2",
+      "net_fen": -249200,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.1676190476190476,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.09333333333333334,
+      "recovery_rate_priced_subset": 0.09333333333333334,
+      "total_prize_fen": 110800,
+      "unpriced_issues": 0,
+      "win_issues": 28
+    },
+    {
+      "actual_back_pair_hit_rate": 0.09,
+      "any_win_rate": 0.15666666666666668,
+      "back_all_rate": 0.09,
+      "both_all_rate": 0.0,
+      "cost_fen": 360000,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 4.0,
+      "mean_back_union_hits": 0.7033333333333334,
+      "mean_distinct_back_pairs": 6.0,
+      "mean_front_pool": 5.0,
+      "mean_front_union_hits": 0.72,
+      "name": "compound_5_4",
+      "net_fen": -286300,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.20333333333333334,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.07666666666666666,
+      "recovery_rate_priced_subset": 0.07666666666666666,
+      "total_prize_fen": 73700,
+      "unpriced_issues": 0,
+      "win_issues": 47
+    },
+    {
+      "actual_back_pair_hit_rate": 0.06,
+      "any_win_rate": 0.19666666666666666,
+      "back_all_rate": 0.08666666666666667,
+      "both_all_rate": 0.0,
+      "cost_fen": 1200000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 3.0,
+      "mean_back_union_hits": 0.5266666666666666,
+      "mean_distinct_back_pairs": 2.0,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 1.1333333333333333,
+      "name": "dantuo_20",
+      "net_fen": -653600,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.23714285714285716,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.11666666666666667,
+      "recovery_rate_priced_subset": 0.11666666666666667,
+      "total_prize_fen": 546400,
+      "unpriced_issues": 0,
+      "win_issues": 59
+    },
+    {
+      "actual_back_pair_hit_rate": 0.03,
+      "any_win_rate": 0.15,
+      "back_all_rate": 0.03666666666666667,
+      "both_all_rate": 0.0,
+      "cost_fen": 420000,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 2.9966666666666666,
+      "mean_back_union_hits": 0.45,
+      "mean_distinct_back_pairs": 2.8033333333333332,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 0.98,
+      "name": "hot_7",
+      "net_fen": -324400,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.2042857142857143,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.06666666666666667,
+      "recovery_rate_priced_subset": 0.07333333333333333,
+      "total_prize_fen": 95600,
+      "unpriced_issues": 0,
+      "win_issues": 45
+    },
+    {
+      "actual_back_pair_hit_rate": 0.03666666666666667,
+      "any_win_rate": 0.16333333333333333,
+      "back_all_rate": 0.05,
+      "both_all_rate": 0.0,
+      "cost_fen": 420000,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 3.0,
+      "mean_back_union_hits": 0.5033333333333333,
+      "mean_distinct_back_pairs": 2.8633333333333333,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 1.04,
+      "name": "cold_7",
+      "net_fen": -325100,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.22047619047619046,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.09333333333333334,
+      "recovery_rate_priced_subset": 0.09333333333333334,
+      "total_prize_fen": 94900,
+      "unpriced_issues": 0,
+      "win_issues": 49
+    },
+    {
+      "actual_back_pair_hit_rate": 0.04666666666666667,
+      "any_win_rate": 0.12666666666666668,
+      "back_all_rate": 0.04666666666666667,
+      "both_all_rate": 0.0,
+      "cost_fen": 420000,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "24120",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 3.0,
+      "mean_back_union_hits": 0.49,
+      "mean_distinct_back_pairs": 2.8666666666666667,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 0.8666666666666667,
+      "name": "omission_7",
+      "net_fen": -368600,
+      "periods": 300,
+      "pooled_draw_number_coverage": 0.19380952380952382,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.06,
+      "recovery_rate_priced_subset": 0.06,
+      "total_prize_fen": 51400,
+      "unpriced_issues": 0,
+      "win_issues": 38
+    },
+    {
+      "actual_back_pair_hit_rate": 0.12,
+      "any_win_rate": 0.45,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 420000,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "24120",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 7.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "pair_rotation_7",
+      "net_fen": -301800,
+      "periods": 300,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.06333333333333334,
+      "recovery_rate_priced_subset": 0.06333333333333334,
+      "total_prize_fen": 118200,
+      "unpriced_issues": 0,
+      "win_issues": 135
+    },
+    {
+      "actual_back_pair_hit_rate": 0.30333333333333334,
+      "any_win_rate": 0.82,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 1200000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "24120",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 20.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "pair_rotation_20",
+      "net_fen": -922800,
+      "periods": 300,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 300,
+      "profit_rate_priced_subset": 0.006666666666666667,
+      "recovery_rate_priced_subset": 0.006666666666666667,
+      "total_prize_fen": 277200,
+      "unpriced_issues": 0,
+      "win_issues": 246
+    }
+  ],
+  "modern_rules": [
+    {
+      "actual_back_pair_hit_rate": 0.0673076923076923,
+      "any_win_rate": 0.34615384615384615,
+      "back_all_rate": 0.3173076923076923,
+      "both_all_rate": 0.009615384615384616,
+      "cost_fen": 104000,
+      "cost_per_issue_yuan": 10.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.038461538461538464,
+      "last_issue": "26117",
+      "mean_back_pool": 7.240384615384615,
+      "mean_back_union_hits": 1.2019230769230769,
+      "mean_distinct_back_pairs": 4.798076923076923,
+      "mean_front_pool": 18.682692307692307,
+      "mean_front_union_hits": 2.75,
+      "name": "random_5",
+      "net_fen": -18900,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.5645604395604396,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.0673076923076923,
+      "recovery_rate_priced_subset": 0.09615384615384616,
+      "total_prize_fen": 85100,
+      "unpriced_issues": 0,
+      "win_issues": 36
+    },
+    {
+      "actual_back_pair_hit_rate": 0.04807692307692308,
+      "any_win_rate": 0.27884615384615385,
+      "back_all_rate": 0.6826923076923077,
+      "both_all_rate": 0.125,
+      "cost_fen": 104000,
+      "cost_per_issue_yuan": 10.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.21153846153846154,
+      "last_issue": "26117",
+      "mean_back_pool": 10.0,
+      "mean_back_union_hits": 1.6730769230769231,
+      "mean_distinct_back_pairs": 5.0,
+      "mean_front_pool": 25.0,
+      "mean_front_union_hits": 3.6826923076923075,
+      "name": "coverage_5",
+      "net_fen": -82800,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.7651098901098901,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.028846153846153848,
+      "recovery_rate_priced_subset": 0.04807692307692308,
+      "total_prize_fen": 21200,
+      "unpriced_issues": 0,
+      "win_issues": 29
+    },
+    {
+      "actual_back_pair_hit_rate": 0.04807692307692308,
+      "any_win_rate": 0.3076923076923077,
+      "back_all_rate": 0.4230769230769231,
+      "both_all_rate": 0.009615384615384616,
+      "cost_fen": 124800,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.04807692307692308,
+      "last_issue": "26117",
+      "mean_back_pool": 8.134615384615385,
+      "mean_back_union_hits": 1.2980769230769231,
+      "mean_distinct_back_pairs": 5.798076923076923,
+      "mean_front_pool": 21.10576923076923,
+      "mean_front_union_hits": 2.9423076923076925,
+      "name": "random_6",
+      "net_fen": -101100,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.6057692307692307,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.038461538461538464,
+      "recovery_rate_priced_subset": 0.038461538461538464,
+      "total_prize_fen": 23700,
+      "unpriced_issues": 0,
+      "win_issues": 32
+    },
+    {
+      "actual_back_pair_hit_rate": 0.10576923076923077,
+      "any_win_rate": 0.4230769230769231,
+      "back_all_rate": 1.0,
+      "both_all_rate": 0.36538461538461536,
+      "cost_fen": 124800,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.36538461538461536,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 6.0,
+      "mean_front_pool": 30.0,
+      "mean_front_union_hits": 4.240384615384615,
+      "name": "coverage_6",
+      "net_fen": -98600,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.8914835164835165,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.019230769230769232,
+      "recovery_rate_priced_subset": 0.019230769230769232,
+      "total_prize_fen": 26200,
+      "unpriced_issues": 0,
+      "win_issues": 44
+    },
+    {
+      "actual_back_pair_hit_rate": 0.10576923076923077,
+      "any_win_rate": 0.36538461538461536,
+      "back_all_rate": 0.4519230769230769,
+      "both_all_rate": 0.057692307692307696,
+      "cost_fen": 145600,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.08653846153846154,
+      "last_issue": "26117",
+      "mean_back_pool": 8.692307692307692,
+      "mean_back_union_hits": 1.3653846153846154,
+      "mean_distinct_back_pairs": 6.653846153846154,
+      "mean_front_pool": 22.98076923076923,
+      "mean_front_union_hits": 3.2211538461538463,
+      "name": "random_7",
+      "net_fen": -115800,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.6552197802197802,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.04807692307692308,
+      "recovery_rate_priced_subset": 0.04807692307692308,
+      "total_prize_fen": 29800,
+      "unpriced_issues": 0,
+      "win_issues": 38
+    },
+    {
+      "actual_back_pair_hit_rate": 0.15384615384615385,
+      "any_win_rate": 0.41346153846153844,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 145600,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "26014",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 6.903846153846154,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "coverage_7",
+      "net_fen": -92700,
+      "periods": 104,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.057692307692307696,
+      "recovery_rate_priced_subset": 0.08653846153846154,
+      "total_prize_fen": 52900,
+      "unpriced_issues": 0,
+      "win_issues": 43
+    },
+    {
+      "actual_back_pair_hit_rate": 0.3173076923076923,
+      "any_win_rate": 0.7403846153846154,
+      "back_all_rate": 0.9615384615384616,
+      "both_all_rate": 0.8365384615384616,
+      "cost_fen": 416000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.875,
+      "last_issue": "26117",
+      "mean_back_pool": 11.798076923076923,
+      "mean_back_union_hits": 1.9615384615384615,
+      "mean_distinct_back_pairs": 17.221153846153847,
+      "mean_front_pool": 33.375,
+      "mean_front_union_hits": 4.865384615384615,
+      "name": "random_20",
+      "net_fen": -319400,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.9752747252747253,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.009615384615384616,
+      "recovery_rate_priced_subset": 0.009615384615384616,
+      "total_prize_fen": 96600,
+      "unpriced_issues": 0,
+      "win_issues": 77
+    },
+    {
+      "actual_back_pair_hit_rate": 0.23076923076923078,
+      "any_win_rate": 0.75,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 416000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "26014",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 17.91346153846154,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "coverage_20",
+      "net_fen": -314200,
+      "periods": 104,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.019230769230769232,
+      "recovery_rate_priced_subset": 0.019230769230769232,
+      "total_prize_fen": 101800,
+      "unpriced_issues": 0,
+      "win_issues": 78
+    },
+    {
+      "actual_back_pair_hit_rate": 0.10576923076923077,
+      "any_win_rate": 0.3942307692307692,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 145600,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "26014",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 7.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "structural_7",
+      "net_fen": -114700,
+      "periods": 104,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.019230769230769232,
+      "recovery_rate_priced_subset": 0.04807692307692308,
+      "total_prize_fen": 30900,
+      "unpriced_issues": 0,
+      "win_issues": 41
+    },
+    {
+      "actual_back_pair_hit_rate": 0.3076923076923077,
+      "any_win_rate": 0.7692307692307693,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 416000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "26014",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 20.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "structural_20",
+      "net_fen": -329700,
+      "periods": 104,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.009615384615384616,
+      "recovery_rate_priced_subset": 0.009615384615384616,
+      "total_prize_fen": 86300,
+      "unpriced_issues": 0,
+      "win_issues": 80
+    },
+    {
+      "actual_back_pair_hit_rate": 0.019230769230769232,
+      "any_win_rate": 0.125,
+      "back_all_rate": 0.019230769230769232,
+      "both_all_rate": 0.0,
+      "cost_fen": 124800,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 2.0,
+      "mean_back_union_hits": 0.40384615384615385,
+      "mean_distinct_back_pairs": 1.0,
+      "mean_front_pool": 6.0,
+      "mean_front_union_hits": 0.8557692307692307,
+      "name": "compound_6_2",
+      "net_fen": -43000,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.17994505494505494,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.125,
+      "recovery_rate_priced_subset": 0.125,
+      "total_prize_fen": 81800,
+      "unpriced_issues": 0,
+      "win_issues": 13
+    },
+    {
+      "actual_back_pair_hit_rate": 0.08653846153846154,
+      "any_win_rate": 0.17307692307692307,
+      "back_all_rate": 0.08653846153846154,
+      "both_all_rate": 0.0,
+      "cost_fen": 124800,
+      "cost_per_issue_yuan": 12.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 4.0,
+      "mean_back_union_hits": 0.7115384615384616,
+      "mean_distinct_back_pairs": 6.0,
+      "mean_front_pool": 5.0,
+      "mean_front_union_hits": 0.7596153846153846,
+      "name": "compound_5_4",
+      "net_fen": -84100,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.21016483516483517,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.10576923076923077,
+      "recovery_rate_priced_subset": 0.10576923076923077,
+      "total_prize_fen": 40700,
+      "unpriced_issues": 0,
+      "win_issues": 18
+    },
+    {
+      "actual_back_pair_hit_rate": 0.057692307692307696,
+      "any_win_rate": 0.19230769230769232,
+      "back_all_rate": 0.08653846153846154,
+      "both_all_rate": 0.0,
+      "cost_fen": 416000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 3.0,
+      "mean_back_union_hits": 0.5865384615384616,
+      "mean_distinct_back_pairs": 2.0,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 1.2596153846153846,
+      "name": "dantuo_20",
+      "net_fen": -266600,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.26373626373626374,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.125,
+      "recovery_rate_priced_subset": 0.125,
+      "total_prize_fen": 149400,
+      "unpriced_issues": 0,
+      "win_issues": 20
+    },
+    {
+      "actual_back_pair_hit_rate": 0.028846153846153848,
+      "any_win_rate": 0.1346153846153846,
+      "back_all_rate": 0.028846153846153848,
+      "both_all_rate": 0.0,
+      "cost_fen": 145600,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 2.9903846153846154,
+      "mean_back_union_hits": 0.4326923076923077,
+      "mean_distinct_back_pairs": 2.7884615384615383,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 1.0096153846153846,
+      "name": "hot_7",
+      "net_fen": -128000,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.20604395604395603,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.04807692307692308,
+      "recovery_rate_priced_subset": 0.0673076923076923,
+      "total_prize_fen": 17600,
+      "unpriced_issues": 0,
+      "win_issues": 14
+    },
+    {
+      "actual_back_pair_hit_rate": 0.019230769230769232,
+      "any_win_rate": 0.15384615384615385,
+      "back_all_rate": 0.028846153846153848,
+      "both_all_rate": 0.0,
+      "cost_fen": 145600,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 3.0,
+      "mean_back_union_hits": 0.5096153846153846,
+      "mean_distinct_back_pairs": 2.8365384615384617,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 1.1153846153846154,
+      "name": "cold_7",
+      "net_fen": -111700,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.23214285714285715,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.08653846153846154,
+      "recovery_rate_priced_subset": 0.08653846153846154,
+      "total_prize_fen": 33900,
+      "unpriced_issues": 0,
+      "win_issues": 16
+    },
+    {
+      "actual_back_pair_hit_rate": 0.019230769230769232,
+      "any_win_rate": 0.10576923076923077,
+      "back_all_rate": 0.019230769230769232,
+      "both_all_rate": 0.0,
+      "cost_fen": 145600,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "26014",
+      "front_all_rate": 0.0,
+      "last_issue": "26117",
+      "mean_back_pool": 3.0,
+      "mean_back_union_hits": 0.47115384615384615,
+      "mean_distinct_back_pairs": 2.875,
+      "mean_front_pool": 7.0,
+      "mean_front_union_hits": 0.9326923076923077,
+      "name": "omission_7",
+      "net_fen": -128700,
+      "periods": 104,
+      "pooled_draw_number_coverage": 0.20054945054945056,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.04807692307692308,
+      "recovery_rate_priced_subset": 0.04807692307692308,
+      "total_prize_fen": 16900,
+      "unpriced_issues": 0,
+      "win_issues": 11
+    },
+    {
+      "actual_back_pair_hit_rate": 0.10576923076923077,
+      "any_win_rate": 0.4230769230769231,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 145600,
+      "cost_per_issue_yuan": 14.0,
+      "first_issue": "26014",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 7.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "pair_rotation_7",
+      "net_fen": -117900,
+      "periods": 104,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.028846153846153848,
+      "recovery_rate_priced_subset": 0.028846153846153848,
+      "total_prize_fen": 27700,
+      "unpriced_issues": 0,
+      "win_issues": 44
+    },
+    {
+      "actual_back_pair_hit_rate": 0.27884615384615385,
+      "any_win_rate": 0.7307692307692307,
+      "back_all_rate": 1.0,
+      "both_all_rate": 1.0,
+      "cost_fen": 416000,
+      "cost_per_issue_yuan": 40.0,
+      "first_issue": "26014",
+      "front_all_rate": 1.0,
+      "last_issue": "26117",
+      "mean_back_pool": 12.0,
+      "mean_back_union_hits": 2.0,
+      "mean_distinct_back_pairs": 20.0,
+      "mean_front_pool": 35.0,
+      "mean_front_union_hits": 5.0,
+      "name": "pair_rotation_20",
+      "net_fen": -329300,
+      "periods": 104,
+      "pooled_draw_number_coverage": 1.0,
+      "priced_issues": 104,
+      "profit_rate_priced_subset": 0.0,
+      "recovery_rate_priced_subset": 0.0,
+      "total_prize_fen": 86700,
+      "unpriced_issues": 0,
+      "win_issues": 76
+    }
+  ],
+  "uniform_current_plan_mc": [
+    {
+      "any_win_interval_95": [
+        0.2974408943081912,
+        0.2999781988014325
+      ],
+      "any_win_rate_mc": 0.298708,
+      "back_pool": 8,
+      "base_plan_id": "6fa699141763a6b7e60c27cdcd3b3082e4ab35aa6dbbe79860f0ac79ef90b624",
+      "both_all_probability_exact": 0.011197014129565449,
+      "cost_yuan": 10.0,
+      "distinct_back_pairs": 5,
+      "expected_back_union_hits": 1.3333333333333333,
+      "expected_front_union_hits": 2.5714285714285716,
+      "first_prize_probability_exact": 2.3336447348867567e-07,
+      "front_pool": 18,
+      "name": "random_5",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.1380696225366156,
+          -0.1342743774633844
+        ],
+        "win_rate_delta": -0.136172
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.060998,
+      "recovery_low_fixed_only_lower_bound_mc": 0.060998,
+      "tickets": [
+        {
+          "back": [
+            1,
+            8
+          ],
+          "front": [
+            17,
+            18,
+            23,
+            30,
+            34
+          ]
+        },
+        {
+          "back": [
+            7,
+            8
+          ],
+          "front": [
+            8,
+            12,
+            14,
+            21,
+            32
+          ]
+        },
+        {
+          "back": [
+            2,
+            5
+          ],
+          "front": [
+            18,
+            22,
+            26,
+            27,
+            31
+          ]
+        },
+        {
+          "back": [
+            5,
+            12
+          ],
+          "front": [
+            4,
+            11,
+            17,
+            27,
+            29
+          ]
+        },
+        {
+          "back": [
+            4,
+            9
+          ],
+          "front": [
+            4,
+            17,
+            31,
+            32,
+            35
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.3218570195942107,
+        0.32444969790201744
+      ],
+      "any_win_rate_mc": 0.323152,
+      "back_pool": 10,
+      "base_plan_id": "0314fe40b671355d7021b6037244573e082e2579a5f671840c6b02f1a9aeeb9f",
+      "both_all_probability_exact": 0.11158789028808004,
+      "cost_yuan": 10.0,
+      "distinct_back_pairs": 5,
+      "expected_back_union_hits": 1.6666666666666667,
+      "expected_front_union_hits": 3.5714285714285716,
+      "first_prize_probability_exact": 2.3336447348867567e-07,
+      "front_pool": 25,
+      "name": "coverage_5",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.11362817093167318,
+          -0.1098278290683268
+        ],
+        "win_rate_delta": -0.111728
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.04339,
+      "recovery_low_fixed_only_lower_bound_mc": 0.04339,
+      "tickets": [
+        {
+          "back": [
+            2,
+            12
+          ],
+          "front": [
+            8,
+            9,
+            15,
+            17,
+            22
+          ]
+        },
+        {
+          "back": [
+            3,
+            11
+          ],
+          "front": [
+            2,
+            3,
+            21,
+            24,
+            33
+          ]
+        },
+        {
+          "back": [
+            6,
+            7
+          ],
+          "front": [
+            1,
+            5,
+            20,
+            32,
+            35
+          ]
+        },
+        {
+          "back": [
+            5,
+            10
+          ],
+          "front": [
+            10,
+            13,
+            18,
+            25,
+            31
+          ]
+        },
+        {
+          "back": [
+            4,
+            8
+          ],
+          "front": [
+            4,
+            7,
+            11,
+            26,
+            28
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.34855917033837974,
+        0.35120313644786477
+      ],
+      "any_win_rate_mc": 0.34988,
+      "back_pool": 8,
+      "base_plan_id": "fdf6b51e643712391372555823dbce0638e6bdbd3b00cf1a50f71077c27dc513",
+      "both_all_probability_exact": 0.05554597205451095,
+      "cost_yuan": 12.0,
+      "distinct_back_pairs": 6,
+      "expected_back_union_hits": 1.3333333333333333,
+      "expected_front_union_hits": 3.4285714285714284,
+      "first_prize_probability_exact": 2.8003736818641077e-07,
+      "front_pool": 24,
+      "name": "random_6",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.08690732674662734,
+          -0.08309267325337268
+        ],
+        "win_rate_delta": -0.085
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.078628,
+      "recovery_low_fixed_only_lower_bound_mc": 0.041616,
+      "tickets": [
+        {
+          "back": [
+            5,
+            12
+          ],
+          "front": [
+            5,
+            17,
+            20,
+            31,
+            33
+          ]
+        },
+        {
+          "back": [
+            8,
+            11
+          ],
+          "front": [
+            5,
+            10,
+            19,
+            28,
+            30
+          ]
+        },
+        {
+          "back": [
+            6,
+            8
+          ],
+          "front": [
+            6,
+            7,
+            10,
+            18,
+            29
+          ]
+        },
+        {
+          "back": [
+            4,
+            11
+          ],
+          "front": [
+            22,
+            24,
+            26,
+            27,
+            33
+          ]
+        },
+        {
+          "back": [
+            7,
+            11
+          ],
+          "front": [
+            1,
+            5,
+            15,
+            32,
+            34
+          ]
+        },
+        {
+          "back": [
+            3,
+            7
+          ],
+          "front": [
+            13,
+            19,
+            23,
+            27,
+            35
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.3833043460615498,
+        0.3860014264083392
+      ],
+      "any_win_rate_mc": 0.384652,
+      "back_pool": 12,
+      "base_plan_id": "4c47f382b2d68ab0d00000b3836d5381cd0c998462267c6e3c5c01c2abd7d6a6",
+      "both_all_probability_exact": 0.4389770570984992,
+      "cost_yuan": 12.0,
+      "distinct_back_pairs": 6,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 4.285714285714286,
+      "first_prize_probability_exact": 2.8003736818641077e-07,
+      "front_pool": 30,
+      "name": "coverage_6",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.05201202888262397,
+          -0.048443971117376035
+        ],
+        "win_rate_delta": -0.050228
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.055178,
+      "recovery_low_fixed_only_lower_bound_mc": 0.04004,
+      "tickets": [
+        {
+          "back": [
+            4,
+            11
+          ],
+          "front": [
+            2,
+            4,
+            8,
+            13,
+            17
+          ]
+        },
+        {
+          "back": [
+            7,
+            12
+          ],
+          "front": [
+            7,
+            12,
+            14,
+            23,
+            28
+          ]
+        },
+        {
+          "back": [
+            3,
+            9
+          ],
+          "front": [
+            3,
+            10,
+            11,
+            24,
+            34
+          ]
+        },
+        {
+          "back": [
+            8,
+            10
+          ],
+          "front": [
+            6,
+            9,
+            22,
+            27,
+            35
+          ]
+        },
+        {
+          "back": [
+            5,
+            6
+          ],
+          "front": [
+            5,
+            16,
+            19,
+            29,
+            32
+          ]
+        },
+        {
+          "back": [
+            1,
+            2
+          ],
+          "front": [
+            15,
+            20,
+            26,
+            30,
+            31
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.39793725182617856,
+        0.4006522956506102
+      ],
+      "any_win_rate_mc": 0.399294,
+      "back_pool": 11,
+      "base_plan_id": "2d93b3d798fceca151c695f1bcd944cf40c7a0d9f61a80c80ca1576bae7701c6",
+      "both_all_probability_exact": 0.06759962049335863,
+      "cost_yuan": 14.0,
+      "distinct_back_pairs": 7,
+      "expected_back_union_hits": 1.8333333333333333,
+      "expected_front_union_hits": 3.142857142857143,
+      "first_prize_probability_exact": 3.2671026288414595e-07,
+      "front_pool": 22,
+      "name": "random_7",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.0374931266055393,
+          -0.0336788733944607
+        ],
+        "win_rate_delta": -0.035586
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.096746,
+      "recovery_low_fixed_only_lower_bound_mc": 0.049724,
+      "tickets": [
+        {
+          "back": [
+            3,
+            7
+          ],
+          "front": [
+            16,
+            25,
+            28,
+            34,
+            35
+          ]
+        },
+        {
+          "back": [
+            1,
+            12
+          ],
+          "front": [
+            6,
+            9,
+            12,
+            19,
+            30
+          ]
+        },
+        {
+          "back": [
+            10,
+            11
+          ],
+          "front": [
+            11,
+            13,
+            15,
+            16,
+            35
+          ]
+        },
+        {
+          "back": [
+            2,
+            10
+          ],
+          "front": [
+            5,
+            8,
+            18,
+            26,
+            30
+          ]
+        },
+        {
+          "back": [
+            5,
+            6
+          ],
+          "front": [
+            2,
+            16,
+            18,
+            23,
+            26
+          ]
+        },
+        {
+          "back": [
+            8,
+            9
+          ],
+          "front": [
+            2,
+            13,
+            17,
+            23,
+            35
+          ]
+        },
+        {
+          "back": [
+            6,
+            8
+          ],
+          "front": [
+            1,
+            14,
+            15,
+            23,
+            34
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.43350638087925064,
+        0.43625461977302915
+      ],
+      "any_win_rate_mc": 0.43488,
+      "back_pool": 12,
+      "base_plan_id": "40fb46ebb1c906170f706d7137bb5c02537cb46768ca47ba6198414cb6077d0b",
+      "both_all_probability_exact": 1.0,
+      "cost_yuan": 14.0,
+      "distinct_back_pairs": 7,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 5.0,
+      "first_prize_probability_exact": 3.2671026288414595e-07,
+      "front_pool": 35,
+      "name": "coverage_7",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          0.0,
+          0.0
+        ],
+        "win_rate_delta": 0.0
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.074792,
+      "recovery_low_fixed_only_lower_bound_mc": 0.04634,
+      "tickets": [
+        {
+          "back": [
+            7,
+            12
+          ],
+          "front": [
+            1,
+            2,
+            9,
+            13,
+            35
+          ]
+        },
+        {
+          "back": [
+            1,
+            2
+          ],
+          "front": [
+            16,
+            25,
+            28,
+            29,
+            31
+          ]
+        },
+        {
+          "back": [
+            4,
+            11
+          ],
+          "front": [
+            3,
+            8,
+            17,
+            26,
+            32
+          ]
+        },
+        {
+          "back": [
+            8,
+            9
+          ],
+          "front": [
+            4,
+            11,
+            15,
+            23,
+            27
+          ]
+        },
+        {
+          "back": [
+            3,
+            10
+          ],
+          "front": [
+            6,
+            18,
+            21,
+            24,
+            34
+          ]
+        },
+        {
+          "back": [
+            5,
+            6
+          ],
+          "front": [
+            5,
+            10,
+            19,
+            30,
+            33
+          ]
+        },
+        {
+          "back": [
+            3,
+            9
+          ],
+          "front": [
+            7,
+            12,
+            14,
+            20,
+            22
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.7578846362241357,
+        0.76025538280247
+      ],
+      "any_win_rate_mc": 0.759072,
+      "back_pool": 12,
+      "base_plan_id": "8bcf6492ca295aa0f2d18300f5513e093442ad8cd9dc78761a38f66ba0511e82",
+      "both_all_probability_exact": 0.7310924369747899,
+      "cost_yuan": 40.0,
+      "distinct_back_pairs": 18,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 4.714285714285714,
+      "first_prize_probability_exact": 9.334578939547027e-07,
+      "front_pool": 33,
+      "name": "random_20",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          0.32236685467829124,
+          0.3260171453217087
+        ],
+        "win_rate_delta": 0.324192
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.01947,
+      "recovery_low_fixed_only_lower_bound_mc": 0.015054,
+      "tickets": [
+        {
+          "back": [
+            2,
+            12
+          ],
+          "front": [
+            6,
+            8,
+            24,
+            26,
+            30
+          ]
+        },
+        {
+          "back": [
+            5,
+            9
+          ],
+          "front": [
+            9,
+            13,
+            20,
+            29,
+            35
+          ]
+        },
+        {
+          "back": [
+            1,
+            7
+          ],
+          "front": [
+            12,
+            13,
+            26,
+            30,
+            35
+          ]
+        },
+        {
+          "back": [
+            3,
+            11
+          ],
+          "front": [
+            6,
+            19,
+            20,
+            25,
+            33
+          ]
+        },
+        {
+          "back": [
+            9,
+            11
+          ],
+          "front": [
+            13,
+            18,
+            24,
+            26,
+            27
+          ]
+        },
+        {
+          "back": [
+            3,
+            7
+          ],
+          "front": [
+            12,
+            18,
+            19,
+            21,
+            24
+          ]
+        },
+        {
+          "back": [
+            8,
+            10
+          ],
+          "front": [
+            4,
+            5,
+            9,
+            18,
+            30
+          ]
+        },
+        {
+          "back": [
+            1,
+            12
+          ],
+          "front": [
+            7,
+            12,
+            15,
+            19,
+            35
+          ]
+        },
+        {
+          "back": [
+            5,
+            12
+          ],
+          "front": [
+            4,
+            8,
+            10,
+            15,
+            18
+          ]
+        },
+        {
+          "back": [
+            5,
+            7
+          ],
+          "front": [
+            1,
+            8,
+            15,
+            30,
+            35
+          ]
+        },
+        {
+          "back": [
+            3,
+            6
+          ],
+          "front": [
+            2,
+            3,
+            11,
+            18,
+            22
+          ]
+        },
+        {
+          "back": [
+            6,
+            9
+          ],
+          "front": [
+            5,
+            7,
+            13,
+            27,
+            34
+          ]
+        },
+        {
+          "back": [
+            5,
+            11
+          ],
+          "front": [
+            1,
+            7,
+            11,
+            16,
+            33
+          ]
+        },
+        {
+          "back": [
+            2,
+            11
+          ],
+          "front": [
+            2,
+            20,
+            21,
+            26,
+            35
+          ]
+        },
+        {
+          "back": [
+            7,
+            9
+          ],
+          "front": [
+            4,
+            6,
+            15,
+            19,
+            29
+          ]
+        },
+        {
+          "back": [
+            3,
+            4
+          ],
+          "front": [
+            4,
+            6,
+            9,
+            23,
+            26
+          ]
+        },
+        {
+          "back": [
+            2,
+            11
+          ],
+          "front": [
+            10,
+            14,
+            22,
+            32,
+            33
+          ]
+        },
+        {
+          "back": [
+            9,
+            11
+          ],
+          "front": [
+            1,
+            8,
+            9,
+            24,
+            25
+          ]
+        },
+        {
+          "back": [
+            1,
+            9
+          ],
+          "front": [
+            3,
+            14,
+            30,
+            31,
+            34
+          ]
+        },
+        {
+          "back": [
+            10,
+            12
+          ],
+          "front": [
+            2,
+            6,
+            15,
+            19,
+            21
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.79859434502835,
+        0.8008130496047555
+      ],
+      "any_win_rate_mc": 0.799706,
+      "back_pool": 12,
+      "base_plan_id": "81df297c790a2675a4a37ae54f5fdde771adeed21c728cb8e122d868b91b8cd6",
+      "both_all_probability_exact": 1.0,
+      "cost_yuan": 40.0,
+      "distinct_back_pairs": 16,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 5.0,
+      "first_prize_probability_exact": 9.334578939547027e-07,
+      "front_pool": 35,
+      "name": "coverage_20",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          0.3630750540126413,
+          0.3665769459873587
+        ],
+        "win_rate_delta": 0.364826
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.015708,
+      "recovery_low_fixed_only_lower_bound_mc": 0.01377,
+      "tickets": [
+        {
+          "back": [
+            6,
+            12
+          ],
+          "front": [
+            1,
+            2,
+            15,
+            21,
+            35
+          ]
+        },
+        {
+          "back": [
+            3,
+            4
+          ],
+          "front": [
+            4,
+            12,
+            23,
+            26,
+            31
+          ]
+        },
+        {
+          "back": [
+            7,
+            10
+          ],
+          "front": [
+            3,
+            5,
+            6,
+            7,
+            22
+          ]
+        },
+        {
+          "back": [
+            1,
+            9
+          ],
+          "front": [
+            16,
+            25,
+            29,
+            33,
+            34
+          ]
+        },
+        {
+          "back": [
+            2,
+            5
+          ],
+          "front": [
+            11,
+            14,
+            17,
+            20,
+            24
+          ]
+        },
+        {
+          "back": [
+            8,
+            11
+          ],
+          "front": [
+            10,
+            13,
+            18,
+            19,
+            32
+          ]
+        },
+        {
+          "back": [
+            5,
+            6
+          ],
+          "front": [
+            8,
+            9,
+            27,
+            28,
+            30
+          ]
+        },
+        {
+          "back": [
+            3,
+            4
+          ],
+          "front": [
+            2,
+            6,
+            15,
+            16,
+            28
+          ]
+        },
+        {
+          "back": [
+            8,
+            10
+          ],
+          "front": [
+            7,
+            12,
+            13,
+            14,
+            23
+          ]
+        },
+        {
+          "back": [
+            1,
+            9
+          ],
+          "front": [
+            1,
+            19,
+            27,
+            33,
+            35
+          ]
+        },
+        {
+          "back": [
+            2,
+            11
+          ],
+          "front": [
+            4,
+            11,
+            18,
+            24,
+            34
+          ]
+        },
+        {
+          "back": [
+            7,
+            12
+          ],
+          "front": [
+            10,
+            21,
+            26,
+            29,
+            32
+          ]
+        },
+        {
+          "back": [
+            2,
+            11
+          ],
+          "front": [
+            3,
+            5,
+            8,
+            25,
+            31
+          ]
+        },
+        {
+          "back": [
+            9,
+            12
+          ],
+          "front": [
+            9,
+            17,
+            20,
+            22,
+            30
+          ]
+        },
+        {
+          "back": [
+            4,
+            10
+          ],
+          "front": [
+            19,
+            26,
+            29,
+            32,
+            33
+          ]
+        },
+        {
+          "back": [
+            3,
+            8
+          ],
+          "front": [
+            5,
+            24,
+            28,
+            31,
+            35
+          ]
+        },
+        {
+          "back": [
+            5,
+            7
+          ],
+          "front": [
+            1,
+            6,
+            10,
+            23,
+            27
+          ]
+        },
+        {
+          "back": [
+            1,
+            6
+          ],
+          "front": [
+            4,
+            11,
+            12,
+            17,
+            30
+          ]
+        },
+        {
+          "back": [
+            2,
+            11
+          ],
+          "front": [
+            2,
+            3,
+            13,
+            21,
+            25
+          ]
+        },
+        {
+          "back": [
+            4,
+            5
+          ],
+          "front": [
+            8,
+            9,
+            18,
+            20,
+            34
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.43390223409748785,
+        0.43665076046974427
+      ],
+      "any_win_rate_mc": 0.435276,
+      "back_pool": 12,
+      "base_plan_id": "3ecc2f755a10829c9ba5b408e60bbce42a70ed60c87eb9bc00d2f36729e23425",
+      "both_all_probability_exact": 1.0,
+      "cost_yuan": 14.0,
+      "distinct_back_pairs": 7,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 5.0,
+      "first_prize_probability_exact": 3.2671026288414595e-07,
+      "front_pool": 35,
+      "name": "structural_7",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.0015186056985059112,
+          0.0023106056985059114
+        ],
+        "win_rate_delta": 0.000396
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.074894,
+      "recovery_low_fixed_only_lower_bound_mc": 0.04648,
+      "tickets": [
+        {
+          "back": [
+            1,
+            10
+          ],
+          "front": [
+            2,
+            4,
+            16,
+            17,
+            23
+          ]
+        },
+        {
+          "back": [
+            5,
+            7
+          ],
+          "front": [
+            10,
+            12,
+            20,
+            32,
+            35
+          ]
+        },
+        {
+          "back": [
+            4,
+            11
+          ],
+          "front": [
+            9,
+            19,
+            22,
+            26,
+            34
+          ]
+        },
+        {
+          "back": [
+            6,
+            12
+          ],
+          "front": [
+            14,
+            27,
+            28,
+            29,
+            30
+          ]
+        },
+        {
+          "back": [
+            3,
+            8
+          ],
+          "front": [
+            5,
+            7,
+            18,
+            21,
+            25
+          ]
+        },
+        {
+          "back": [
+            2,
+            9
+          ],
+          "front": [
+            1,
+            3,
+            6,
+            13,
+            33
+          ]
+        },
+        {
+          "back": [
+            3,
+            9
+          ],
+          "front": [
+            8,
+            11,
+            15,
+            24,
+            31
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.8123918693917336,
+        0.8145513136784024
+      ],
+      "any_win_rate_mc": 0.813474,
+      "back_pool": 12,
+      "base_plan_id": "2d6cccac7d33799aac55d03759b6965f35c5203815c2da71fe42c740a1e5b048",
+      "both_all_probability_exact": 1.0,
+      "cost_yuan": 40.0,
+      "distinct_back_pairs": 20,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 5.0,
+      "first_prize_probability_exact": 9.334578939547027e-07,
+      "front_pool": 35,
+      "name": "structural_20",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          0.37684533597218745,
+          0.3803426640278125
+        ],
+        "win_rate_delta": 0.378594
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.015008,
+      "recovery_low_fixed_only_lower_bound_mc": 0.01339,
+      "tickets": [
+        {
+          "back": [
+            5,
+            10
+          ],
+          "front": [
+            2,
+            14,
+            28,
+            29,
+            35
+          ]
+        },
+        {
+          "back": [
+            3,
+            4
+          ],
+          "front": [
+            3,
+            17,
+            18,
+            19,
+            22
+          ]
+        },
+        {
+          "back": [
+            2,
+            12
+          ],
+          "front": [
+            5,
+            11,
+            23,
+            24,
+            33
+          ]
+        },
+        {
+          "back": [
+            6,
+            9
+          ],
+          "front": [
+            1,
+            4,
+            10,
+            32,
+            34
+          ]
+        },
+        {
+          "back": [
+            1,
+            8
+          ],
+          "front": [
+            6,
+            13,
+            16,
+            21,
+            27
+          ]
+        },
+        {
+          "back": [
+            7,
+            11
+          ],
+          "front": [
+            7,
+            8,
+            12,
+            15,
+            31
+          ]
+        },
+        {
+          "back": [
+            7,
+            9
+          ],
+          "front": [
+            9,
+            20,
+            25,
+            26,
+            30
+          ]
+        },
+        {
+          "back": [
+            5,
+            8
+          ],
+          "front": [
+            8,
+            21,
+            27,
+            32,
+            35
+          ]
+        },
+        {
+          "back": [
+            1,
+            2
+          ],
+          "front": [
+            15,
+            17,
+            23,
+            26,
+            31
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            2,
+            10,
+            11,
+            24,
+            25
+          ]
+        },
+        {
+          "back": [
+            6,
+            10
+          ],
+          "front": [
+            3,
+            6,
+            16,
+            20,
+            30
+          ]
+        },
+        {
+          "back": [
+            4,
+            10
+          ],
+          "front": [
+            9,
+            12,
+            18,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            1,
+            3
+          ],
+          "front": [
+            7,
+            14,
+            19,
+            22,
+            33
+          ]
+        },
+        {
+          "back": [
+            4,
+            5
+          ],
+          "front": [
+            1,
+            4,
+            5,
+            13,
+            29
+          ]
+        },
+        {
+          "back": [
+            3,
+            9
+          ],
+          "front": [
+            4,
+            5,
+            13,
+            19,
+            34
+          ]
+        },
+        {
+          "back": [
+            8,
+            12
+          ],
+          "front": [
+            6,
+            9,
+            18,
+            20,
+            31
+          ]
+        },
+        {
+          "back": [
+            6,
+            11
+          ],
+          "front": [
+            1,
+            11,
+            23,
+            24,
+            33
+          ]
+        },
+        {
+          "back": [
+            2,
+            7
+          ],
+          "front": [
+            3,
+            16,
+            17,
+            27,
+            28
+          ]
+        },
+        {
+          "back": [
+            4,
+            12
+          ],
+          "front": [
+            2,
+            14,
+            15,
+            21,
+            32
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            8,
+            10,
+            26,
+            30,
+            35
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.09185542693335244,
+        0.09346283242939724
+      ],
+      "any_win_rate_mc": 0.092656,
+      "back_pool": 2,
+      "base_plan_id": "9a20f34cdbd68d5c5eb5b1169d185fd435eec6610f844d9928679c2c4f54ebed",
+      "both_all_probability_exact": 2.8003736818641077e-07,
+      "cost_yuan": 12.0,
+      "distinct_back_pairs": 1,
+      "expected_back_union_hits": 0.3333333333333333,
+      "expected_front_union_hits": 0.8571428571428571,
+      "first_prize_probability_exact": 2.8003736818641077e-07,
+      "front_pool": 6,
+      "name": "compound_6_2",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.34383441580510016,
+          -0.3406135841948998
+        ],
+        "win_rate_delta": -0.342224
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.092656,
+      "recovery_low_fixed_only_lower_bound_mc": 0.092656,
+      "tickets": [
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            9,
+            10,
+            18,
+            20,
+            21
+          ]
+        },
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            9,
+            10,
+            18,
+            20,
+            33
+          ]
+        },
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            9,
+            10,
+            18,
+            21,
+            33
+          ]
+        },
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            9,
+            10,
+            20,
+            21,
+            33
+          ]
+        },
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            9,
+            18,
+            20,
+            21,
+            33
+          ]
+        },
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            10,
+            18,
+            20,
+            21,
+            33
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.16277873051246441,
+        0.1648304356007905
+      ],
+      "any_win_rate_mc": 0.163802,
+      "back_pool": 4,
+      "base_plan_id": "512a8d8c8069b5de5c2191a0f0a1461be5c453f4e136a6c5ff9da41d23e28108",
+      "both_all_probability_exact": 2.8003736818641077e-07,
+      "cost_yuan": 12.0,
+      "distinct_back_pairs": 6,
+      "expected_back_union_hits": 0.6666666666666666,
+      "expected_front_union_hits": 0.7142857142857143,
+      "first_prize_probability_exact": 2.8003736818641077e-07,
+      "front_pool": 5,
+      "name": "compound_5_4",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.27283667539400885,
+          -0.2693193246059911
+        ],
+        "win_rate_delta": -0.271078
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.085542,
+      "recovery_low_fixed_only_lower_bound_mc": 0.085542,
+      "tickets": [
+        {
+          "back": [
+            2,
+            4
+          ],
+          "front": [
+            2,
+            12,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "back": [
+            2,
+            7
+          ],
+          "front": [
+            2,
+            12,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            2,
+            12,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "back": [
+            4,
+            7
+          ],
+          "front": [
+            2,
+            12,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "back": [
+            4,
+            8
+          ],
+          "front": [
+            2,
+            12,
+            23,
+            25,
+            26
+          ]
+        },
+        {
+          "back": [
+            7,
+            8
+          ],
+          "front": [
+            2,
+            12,
+            23,
+            25,
+            26
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.16236378235637333,
+        0.16441339014925488
+      ],
+      "any_win_rate_mc": 0.163386,
+      "back_pool": 3,
+      "base_plan_id": "ee2c742ec847fa96d8d15a64fb95c672662ce21013a23e2c305eff162aaf759a",
+      "both_all_probability_exact": 2.9403923659573132e-06,
+      "cost_yuan": 40.0,
+      "distinct_back_pairs": 2,
+      "expected_back_union_hits": 0.5,
+      "expected_front_union_hits": 1.0,
+      "first_prize_probability_exact": 9.334578939547027e-07,
+      "front_pool": 7,
+      "name": "dantuo_20",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.2732219353952012,
+          -0.26976606460479885
+        ],
+        "win_rate_delta": -0.271494
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.129022,
+      "recovery_low_fixed_only_lower_bound_mc": 0.073172,
+      "tickets": [
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            12,
+            13,
+            17,
+            28
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            12,
+            13,
+            17,
+            28
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            12,
+            13,
+            18,
+            28
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            12,
+            13,
+            18,
+            28
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            12,
+            13,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            12,
+            13,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            12,
+            17,
+            18,
+            28
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            12,
+            17,
+            18,
+            28
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            12,
+            17,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            12,
+            17,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            12,
+            18,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            12,
+            18,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            13,
+            17,
+            18,
+            28
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            13,
+            17,
+            18,
+            28
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            13,
+            17,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            13,
+            17,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            13,
+            18,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            13,
+            18,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            9,
+            17,
+            18,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            9,
+            17,
+            18,
+            28,
+            34
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.15598824718847618,
+        0.1580050235384262
+      ],
+      "any_win_rate_mc": 0.156994,
+      "back_pool": 3,
+      "base_plan_id": "b92c41de4b39cb7bb979a3d44d4c476d8deb01df3c050d0cbbdf51c8f30aa88d",
+      "both_all_probability_exact": 2.9403923659573132e-06,
+      "cost_yuan": 14.0,
+      "distinct_back_pairs": 3,
+      "expected_back_union_hits": 0.5,
+      "expected_front_union_hits": 1.0,
+      "first_prize_probability_exact": 3.2671026288414595e-07,
+      "front_pool": 7,
+      "name": "hot_7",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.27958047723693713,
+          -0.2761915227630629
+        ],
+        "win_rate_delta": -0.277886
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.124704,
+      "recovery_low_fixed_only_lower_bound_mc": 0.079544,
+      "tickets": [
+        {
+          "back": [
+            2,
+            9
+          ],
+          "front": [
+            3,
+            4,
+            10,
+            12,
+            14
+          ]
+        },
+        {
+          "back": [
+            2,
+            7
+          ],
+          "front": [
+            4,
+            10,
+            12,
+            14,
+            15
+          ]
+        },
+        {
+          "back": [
+            2,
+            7
+          ],
+          "front": [
+            3,
+            4,
+            12,
+            14,
+            26
+          ]
+        },
+        {
+          "back": [
+            7,
+            9
+          ],
+          "front": [
+            4,
+            10,
+            12,
+            14,
+            15
+          ]
+        },
+        {
+          "back": [
+            2,
+            9
+          ],
+          "front": [
+            4,
+            10,
+            12,
+            14,
+            26
+          ]
+        },
+        {
+          "back": [
+            2,
+            9
+          ],
+          "front": [
+            4,
+            10,
+            12,
+            14,
+            15
+          ]
+        },
+        {
+          "back": [
+            2,
+            9
+          ],
+          "front": [
+            3,
+            4,
+            12,
+            14,
+            26
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.15574887666831533,
+        0.1577643977464947
+      ],
+      "any_win_rate_mc": 0.156754,
+      "back_pool": 3,
+      "base_plan_id": "6829e9d9eb29e927993050b948c9a5b59b3645faac25e7d8566a148ba5c7de7c",
+      "both_all_probability_exact": 2.9403923659573132e-06,
+      "cost_yuan": 14.0,
+      "distinct_back_pairs": 3,
+      "expected_back_union_hits": 0.5,
+      "expected_front_union_hits": 1.0,
+      "first_prize_probability_exact": 3.2671026288414595e-07,
+      "front_pool": 7,
+      "name": "cold_7",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.27982717144713937,
+          -0.2764248285528606
+        ],
+        "win_rate_delta": -0.278126
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.137298,
+      "recovery_low_fixed_only_lower_bound_mc": 0.082112,
+      "tickets": [
+        {
+          "back": [
+            3,
+            11
+          ],
+          "front": [
+            2,
+            9,
+            23,
+            30,
+            31
+          ]
+        },
+        {
+          "back": [
+            3,
+            11
+          ],
+          "front": [
+            8,
+            9,
+            23,
+            30,
+            31
+          ]
+        },
+        {
+          "back": [
+            3,
+            6
+          ],
+          "front": [
+            8,
+            9,
+            30,
+            31,
+            34
+          ]
+        },
+        {
+          "back": [
+            3,
+            11
+          ],
+          "front": [
+            8,
+            9,
+            30,
+            31,
+            34
+          ]
+        },
+        {
+          "back": [
+            6,
+            11
+          ],
+          "front": [
+            2,
+            8,
+            9,
+            23,
+            31
+          ]
+        },
+        {
+          "back": [
+            6,
+            11
+          ],
+          "front": [
+            8,
+            9,
+            30,
+            31,
+            34
+          ]
+        },
+        {
+          "back": [
+            3,
+            6
+          ],
+          "front": [
+            8,
+            9,
+            23,
+            30,
+            31
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.16995291367679521,
+        0.17204014192216
+      ],
+      "any_win_rate_mc": 0.170994,
+      "back_pool": 3,
+      "base_plan_id": "3cbcefb2d9e9ce2a22598119284a1d9e063f9582686d1e5b3125c169eb8b5556",
+      "both_all_probability_exact": 2.9403923659573132e-06,
+      "cost_yuan": 14.0,
+      "distinct_back_pairs": 3,
+      "expected_back_union_hits": 0.5,
+      "expected_front_union_hits": 1.0,
+      "first_prize_probability_exact": 3.2671026288414595e-07,
+      "front_pool": 7,
+      "name": "omission_7",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.2656181392385497,
+          -0.2621538607614503
+        ],
+        "win_rate_delta": -0.263886
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.143836,
+      "recovery_low_fixed_only_lower_bound_mc": 0.078318,
+      "tickets": [
+        {
+          "back": [
+            5,
+            11
+          ],
+          "front": [
+            7,
+            14,
+            21,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            4,
+            11
+          ],
+          "front": [
+            7,
+            14,
+            23,
+            27,
+            28
+          ]
+        },
+        {
+          "back": [
+            5,
+            11
+          ],
+          "front": [
+            7,
+            14,
+            21,
+            23,
+            34
+          ]
+        },
+        {
+          "back": [
+            4,
+            5
+          ],
+          "front": [
+            7,
+            23,
+            27,
+            28,
+            34
+          ]
+        },
+        {
+          "back": [
+            5,
+            11
+          ],
+          "front": [
+            14,
+            21,
+            23,
+            27,
+            34
+          ]
+        },
+        {
+          "back": [
+            4,
+            5
+          ],
+          "front": [
+            7,
+            14,
+            21,
+            27,
+            34
+          ]
+        },
+        {
+          "back": [
+            4,
+            11
+          ],
+          "front": [
+            7,
+            14,
+            21,
+            23,
+            34
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.43493985358240067,
+        0.4376891250346308
+      ],
+      "any_win_rate_mc": 0.436314,
+      "back_pool": 12,
+      "base_plan_id": "40fb46ebb1c906170f706d7137bb5c02537cb46768ca47ba6198414cb6077d0b",
+      "both_all_probability_exact": 1.0,
+      "cost_yuan": 14.0,
+      "distinct_back_pairs": 7,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 5.0,
+      "first_prize_probability_exact": 3.2671026288414595e-07,
+      "front_pool": 35,
+      "name": "pair_rotation_7",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          -0.00023105418981052414,
+          0.003099054189810524
+        ],
+        "win_rate_delta": 0.001434
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.074354,
+      "recovery_low_fixed_only_lower_bound_mc": 0.046158,
+      "tickets": [
+        {
+          "back": [
+            8,
+            11
+          ],
+          "front": [
+            1,
+            2,
+            9,
+            13,
+            35
+          ]
+        },
+        {
+          "back": [
+            1,
+            4
+          ],
+          "front": [
+            16,
+            25,
+            28,
+            29,
+            31
+          ]
+        },
+        {
+          "back": [
+            5,
+            12
+          ],
+          "front": [
+            3,
+            8,
+            17,
+            26,
+            32
+          ]
+        },
+        {
+          "back": [
+            6,
+            9
+          ],
+          "front": [
+            4,
+            11,
+            15,
+            23,
+            27
+          ]
+        },
+        {
+          "back": [
+            2,
+            7
+          ],
+          "front": [
+            6,
+            18,
+            21,
+            24,
+            34
+          ]
+        },
+        {
+          "back": [
+            3,
+            10
+          ],
+          "front": [
+            5,
+            10,
+            19,
+            30,
+            33
+          ]
+        },
+        {
+          "back": [
+            3,
+            8
+          ],
+          "front": [
+            7,
+            12,
+            14,
+            20,
+            22
+          ]
+        }
+      ],
+      "trials": 500000
+    },
+    {
+      "any_win_interval_95": [
+        0.8091808068953833,
+        0.8113544254083199
+      ],
+      "any_win_rate_mc": 0.81027,
+      "back_pool": 12,
+      "base_plan_id": "81df297c790a2675a4a37ae54f5fdde771adeed21c728cb8e122d868b91b8cd6",
+      "both_all_probability_exact": 1.0,
+      "cost_yuan": 40.0,
+      "distinct_back_pairs": 20,
+      "expected_back_union_hits": 2.0,
+      "expected_front_union_hits": 5.0,
+      "first_prize_probability_exact": 9.334578939547027e-07,
+      "front_pool": 35,
+      "name": "pair_rotation_20",
+      "paired_vs_coverage_7": {
+        "monte_carlo_ci95": [
+          0.3736317754525132,
+          0.3771482245474868
+        ],
+        "win_rate_delta": 0.37539
+      },
+      "recovery_high_fixed_only_lower_bound_mc": 0.015766,
+      "recovery_low_fixed_only_lower_bound_mc": 0.013738,
+      "tickets": [
+        {
+          "back": [
+            4,
+            5
+          ],
+          "front": [
+            1,
+            2,
+            15,
+            21,
+            35
+          ]
+        },
+        {
+          "back": [
+            2,
+            8
+          ],
+          "front": [
+            4,
+            12,
+            23,
+            26,
+            31
+          ]
+        },
+        {
+          "back": [
+            1,
+            10
+          ],
+          "front": [
+            3,
+            5,
+            6,
+            7,
+            22
+          ]
+        },
+        {
+          "back": [
+            7,
+            9
+          ],
+          "front": [
+            16,
+            25,
+            29,
+            33,
+            34
+          ]
+        },
+        {
+          "back": [
+            11,
+            12
+          ],
+          "front": [
+            11,
+            14,
+            17,
+            20,
+            24
+          ]
+        },
+        {
+          "back": [
+            3,
+            6
+          ],
+          "front": [
+            10,
+            13,
+            18,
+            19,
+            32
+          ]
+        },
+        {
+          "back": [
+            1,
+            11
+          ],
+          "front": [
+            8,
+            9,
+            27,
+            28,
+            30
+          ]
+        },
+        {
+          "back": [
+            5,
+            6
+          ],
+          "front": [
+            2,
+            6,
+            15,
+            16,
+            28
+          ]
+        },
+        {
+          "back": [
+            3,
+            7
+          ],
+          "front": [
+            7,
+            12,
+            13,
+            14,
+            23
+          ]
+        },
+        {
+          "back": [
+            4,
+            10
+          ],
+          "front": [
+            1,
+            19,
+            27,
+            33,
+            35
+          ]
+        },
+        {
+          "back": [
+            8,
+            12
+          ],
+          "front": [
+            4,
+            11,
+            18,
+            24,
+            34
+          ]
+        },
+        {
+          "back": [
+            2,
+            9
+          ],
+          "front": [
+            10,
+            21,
+            26,
+            29,
+            32
+          ]
+        },
+        {
+          "back": [
+            3,
+            11
+          ],
+          "front": [
+            3,
+            5,
+            8,
+            25,
+            31
+          ]
+        },
+        {
+          "back": [
+            5,
+            10
+          ],
+          "front": [
+            9,
+            17,
+            20,
+            22,
+            30
+          ]
+        },
+        {
+          "back": [
+            1,
+            9
+          ],
+          "front": [
+            19,
+            26,
+            29,
+            32,
+            33
+          ]
+        },
+        {
+          "back": [
+            7,
+            8
+          ],
+          "front": [
+            5,
+            24,
+            28,
+            31,
+            35
+          ]
+        },
+        {
+          "back": [
+            2,
+            6
+          ],
+          "front": [
+            1,
+            6,
+            10,
+            23,
+            27
+          ]
+        },
+        {
+          "back": [
+            4,
+            12
+          ],
+          "front": [
+            4,
+            11,
+            12,
+            17,
+            30
+          ]
+        },
+        {
+          "back": [
+            9,
+            11
+          ],
+          "front": [
+            2,
+            3,
+            13,
+            21,
+            25
+          ]
+        },
+        {
+          "back": [
+            8,
+            10
+          ],
+          "front": [
+            8,
+            9,
+            18,
+            20,
+            34
+          ]
+        }
+      ],
+      "trials": 500000
+    }
+  ],
+  "service_version": "1.1.0",
+  "actual_records": 0,
+  "actual_settled_records": 0,
+  "target_issue": "26118",
+  "generated_at": "2026-10-16",
+  "method": "Live service master seed; 300 past draws and 104 current-rule draws. Replay uses only prior 60 draws. Draw-number coverage is the fraction of the 7 drawn numbers occurring anywhere in the ticket group. It is distinct from a winning ticket. Current-group simulations use 500000 shared uniform draws; fixed-award recovery probabilities are lower bounds and exclude floating awards, promotions and tax.",
+  "review_program_sha256": "6357e87f07e38e346a400f2d56cfb573873256d4f9c269e0ab8eb9fc1acd767a",
+  "live_verification": {
+    "matched_production_plans": 9,
+    "generator_version": "dlt-plan-v3",
+    "saved_record_count_after_verification": 0,
+    "method": "Read-only generation API plan IDs matched the nine main replay variants exactly; no plans saved."
+  }
+}

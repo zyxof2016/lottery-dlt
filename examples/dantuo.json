@@ -1,0 +1,15 @@
+{
+  "issue": "26119",
+  "mode": "dantuo",
+  "strategy": "random",
+  "front_pool": 7,
+  "back_pool": 3,
+  "front_banker_count": 2,
+  "back_banker_count": 1,
+  "front_numbers": [1, 6, 12, 18, 23, 29, 35],
+  "back_numbers": [2, 7, 11],
+  "front_bankers": [6, 23],
+  "back_bankers": [7],
+  "additional": true,
+  "multiplier": 1
+}

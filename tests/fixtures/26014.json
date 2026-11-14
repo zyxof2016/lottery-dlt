@@ -1,0 +1,18 @@
+[
+  {
+    "issue": "26014",
+    "date": "2026-02-02",
+    "front": [16, 18, 23, 34, 35],
+    "back": [1, 6],
+    "awards": {
+      "1": {"basic_fen": 1000000000},
+      "2": {"basic_fen": 24215900, "additional_fen": 19372700},
+      "3": {"basic_fen": 500000},
+      "4": {"basic_fen": 30000},
+      "5": {"basic_fen": 15000},
+      "6": {"basic_fen": 1500},
+      "7": {"basic_fen": 500}
+    },
+    "source": "https://www.gdlottery.cn/f_html/kjgg/P085_26014.html"
+  }
+]

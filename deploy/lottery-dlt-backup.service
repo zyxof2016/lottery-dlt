@@ -1,0 +1,18 @@
+[Unit]
+Description=Online DLT backup and isolated restore verification
+After=lottery-dlt.service
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/data/apps/lottery-dlt
+EnvironmentFile=/data/apps/lottery-dlt/shared/service.env
+ExecStart=/usr/bin/bash /data/apps/lottery-dlt/current/backup-daily.sh
+TimeoutStartSec=180
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/data/apps/lottery-dlt/shared/data /data/apps/lottery-dlt/backups
+MemoryMax=256M

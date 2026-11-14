@@ -1,0 +1,26 @@
+[Unit]
+Description=Lottery DLT Rust service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/data/apps/lottery-dlt
+EnvironmentFile=/data/apps/lottery-dlt/shared/service.env
+ExecStart=/data/apps/lottery-dlt/current/lottery-dlt serve
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGINT
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/data/apps/lottery-dlt/shared/data /data/apps/lottery-dlt/backups
+MemoryMax=256M
+
+[Install]
+WantedBy=multi-user.target

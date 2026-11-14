@@ -1,0 +1,9 @@
+{
+  "strategy": "coverage",
+  "bets": 5,
+  "window": 60,
+  "warmup": 60,
+  "limit": 300,
+  "seed": 20261015,
+  "additional": false
+}

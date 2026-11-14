@@ -1,0 +1,22 @@
+services:
+  lottery-dlt:
+    build: .
+    image: lottery-dlt:${APP_VERSION:-local}
+    restart: unless-stopped
+    init: true
+    ports:
+      - "${BIND_ADDRESS:-127.0.0.1}:${PORT:-6792}:6792"
+    environment:
+      LOTTERY_ADMIN_TOKEN: ${LOTTERY_ADMIN_TOKEN:?请先在.env设置至少16字符的管理员令牌}
+      TZ: Asia/Shanghai
+    volumes:
+      - ./data:/app/data
+    mem_limit: 256m
+    cpus: 1.0
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

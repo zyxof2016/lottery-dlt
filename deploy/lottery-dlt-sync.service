@@ -1,0 +1,20 @@
+[Unit]
+Description=Sync official DLT draws, schedules and recommendations
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/data/apps/lottery-dlt
+EnvironmentFile=/data/apps/lottery-dlt/shared/service.env
+ExecStart=/data/apps/lottery-dlt/current/lottery-dlt operate --pages 2
+TimeoutStartSec=90
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/data/apps/lottery-dlt/shared/data
+MemoryMax=128M

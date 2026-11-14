@@ -1,0 +1,9 @@
+{
+  "issue": "26119",
+  "mode": "compound",
+  "strategy": "random",
+  "front_pool": 6,
+  "back_pool": 3,
+  "additional": false,
+  "multiplier": 1
+}
