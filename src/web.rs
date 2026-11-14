@@ -149,6 +149,13 @@ async fn css() -> Response {
     )
         .into_response()
 }
+async fn pool_rank_js() -> Response {
+    (
+        [(header::CONTENT_TYPE, "text/javascript; charset=utf-8")],
+        include_str!("../web/pool-rank.js"),
+    )
+        .into_response()
+}
 async fn pool_js() -> Response {
     (
         [(header::CONTENT_TYPE, "text/javascript; charset=utf-8")],
@@ -233,6 +240,52 @@ async fn overview(State(app): State<App>) -> ApiResult {
             "data_quality":{"age_days":age,"stale":age.is_none_or(|d|d>4),"missing_issues":missing},
             "admin_token_required":protected,"rules":prizes::theory(),"note":"下一期期号请核对官方公告；网页不会自动生成或保存方案。"}))
     }).await
+}
+#[derive(Deserialize, Default)]
+struct PoolQuery {
+    issue: Option<String>,
+}
+async fn number_pools(State(app): State<App>, Query(query): Query<PoolQuery>) -> ApiResult {
+    blocking(move || {
+        let draws = app.store.draws()?;
+        let saved = app.store.records()?;
+        let seed = app.store.settings()?.seed;
+        let latest = draws.last().map(|draw| draw.issue.as_str());
+        let pending = app
+            .store
+            .schedules()?
+            .into_iter()
+            .map(|schedule| schedule.issue)
+            .filter(|issue| latest.is_none_or(|current| issue.as_str() > current))
+            .min();
+        let pools = saved
+            .iter()
+            .map(|record| {
+                let mode = serde_json::to_value(record.plan.request.mode)?;
+                let strategy = serde_json::to_value(record.plan.request.strategy)?;
+                Ok(crate::number_rank::FrozenPool {
+                    id: record.id.clone(),
+                    issue: record.plan.request.issue.clone(),
+                    label: record.label.clone(),
+                    kind: record.kind.clone(),
+                    bets: record.plan.tickets.len(),
+                    cost_fen: record.plan.cost_fen,
+                    front: record.plan.front_pool.clone(),
+                    back: record.plan.back_pool.clone(),
+                    mode: mode.as_str().unwrap_or("").to_string(),
+                    strategy: strategy.as_str().unwrap_or("").to_string(),
+                })
+            })
+            .collect::<Result<Vec<_>>>()?;
+        crate::number_rank::report(
+            &draws,
+            query.issue.as_deref(),
+            pending.as_deref(),
+            seed,
+            &pools,
+        )
+    })
+    .await
 }
 #[derive(Deserialize, Default)]
 struct Page {
@@ -569,6 +622,7 @@ pub fn router(app: App) -> Router {
         .route("/reviews", get(index))
         .route("/app.js", get(js))
         .route("/pools.js", get(pool_js))
+        .route("/pool-rank.js", get(pool_rank_js))
         .route("/format.js", get(format_js))
         .route("/usability.js", get(usability_js))
         .route("/workflow.js", get(workflow_js))
@@ -580,6 +634,7 @@ pub fn router(app: App) -> Router {
         .route("/favicon.ico", get(|| async { StatusCode::NO_CONTENT }))
         .route("/healthz", get(health))
         .route("/api/overview", get(overview))
+        .route("/api/pools/rank", get(number_pools))
         .route("/api/theory", get(theory))
         .route("/api/draws", get(draws))
         .route("/api/draws/import", post(import))

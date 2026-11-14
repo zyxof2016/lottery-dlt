@@ -5,6 +5,7 @@ pub mod fetch;
 pub mod hitgap;
 pub mod jobs;
 pub mod model;
+pub mod number_rank;
 pub mod operations;
 pub mod plan;
 pub mod prizes;

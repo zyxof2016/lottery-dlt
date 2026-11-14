@@ -1,6 +1,6 @@
 [package]
 name = "lottery-dlt"
-version = "1.9.0"
+version = "1.10.0"
 edition = "2021"
 rust-version = "1.94"
 description = "体彩大乐透选号、对奖与严格滚动回测，纯 Rust 服务"

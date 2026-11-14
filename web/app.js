@@ -5,8 +5,8 @@ const escapeHTML = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => ({"&":"&amp
 const money = (fen) => fen == null ? "待核实" : `¥${(fen / 100).toFixed(2)}`;
 const percent = DltFormat.percent;
 const names = {random:"均匀随机",coverage:"均衡覆盖",structural:"后区组合去重",hot:"热号实验",cold:"冷号实验",omission:"遗漏实验",single:"单式多注",compound:"复式",dantuo:"胆拖"};
-const tabs = [["generator","方案生成"],["records","我的方案与对奖"],["reviews","每期推荐与复盘"],["draws","开奖历史"],["backtest","概率与历史回测"],["research","策略对照实验"],["settings","系统设置"]];
-const state = {tab:"generator",overview:null,records:[],recommendations:{records:[],batches:[]},draws:[],config:null,plan:null,form:null,backtest:null,research:null,stats:null,simulation:null,recordFilter:"",drawFilter:"",generation:0,renderRevision:0,schedules:[],operations:null,recordPage:1,reviewPage:1,drawPage:1,recordTotal:0,reviewTotal:0,drawTotal:0,activeJobs:{},optimizer:null,suite:null,liveReview:null,reviewWindow:30,poolSelection:[],poolThreshold:2,poolChoices:[],poolBrowseSource:"recommendation",poolBrowseFilter:"",poolBrowsePage:1,poolBrowseTotal:0,poolComparisonIssue:"",poolDraw:null,poolStorageWarning:"",poolSearch:"",poolReferenceId:"",poolDrawStatus:"missing",poolDrawRevision:0,poolBrowseRevision:0,liveReviewRevision:0,liveReviewError:"",reviewFilter:"",recordStatus:"",savedPreview:null,previewExpanded:false,poolDeduplicate:false,poolExcludeFlat:false,replacementIssue:"",snapshotWarnings:{},saveDraft:null,draftStored:false,draftRestored:false,draftWarning:""};
+const tabs = [["pools","号码池与排序"],["draws","开奖历史"],["settings","系统设置"]];
+const state = {tab:"pools",poolIssue:"",poolPanel:"rank",poolSort:"size",poolQuery:"",poolOpen:"",rankSpan:{front:15,back:12},rankSort:"default",rankFocus:{front:"hot",back:"hot"},poolView:null,overview:null,records:[],recommendations:{records:[],batches:[]},draws:[],config:null,plan:null,form:null,backtest:null,research:null,stats:null,simulation:null,recordFilter:"",drawFilter:"",generation:0,renderRevision:0,schedules:[],operations:null,recordPage:1,reviewPage:1,drawPage:1,recordTotal:0,reviewTotal:0,drawTotal:0,activeJobs:{},optimizer:null,suite:null,liveReview:null,reviewWindow:30,poolSelection:[],poolThreshold:2,poolChoices:[],poolBrowseSource:"recommendation",poolBrowseFilter:"",poolBrowsePage:1,poolBrowseTotal:0,poolComparisonIssue:"",poolDraw:null,poolStorageWarning:"",poolSearch:"",poolReferenceId:"",poolDrawStatus:"missing",poolDrawRevision:0,poolBrowseRevision:0,liveReviewRevision:0,liveReviewError:"",reviewFilter:"",recordStatus:"",savedPreview:null,previewExpanded:false,poolDeduplicate:false,poolExcludeFlat:false,replacementIssue:"",snapshotWarnings:{},saveDraft:null,draftStored:false,draftRestored:false,draftWarning:""};
 const content = $("content");
 loadPoolSelection();
 loadGeneratorDraft();
@@ -78,13 +78,13 @@ async function refresh() {
   renderAuth();renderAuxiliaryStatus();
   const q=state.overview.data_quality;
   $("quality").hidden=!q.stale&&!q.missing_issues.length;
-  $("quality").textContent=state.overview.draw_count ? `开奖缓存截至 ${state.overview.latest_draw.issue} 期（${state.overview.latest_draw.date}）${q.stale?"，请同步最新数据":""}。缓存区间内缺 ${q.missing_issues.length} 期。` : "尚无开奖数据。可同步体彩官方数据，或在开奖历史中导入已核实的 JSON 数据。CSV 可通过命令行导入。随机选号无需历史。";
+  $("quality").textContent=state.overview.draw_count ? `开奖缓存截至 ${state.overview.latest_draw.issue} 期（${state.overview.latest_draw.date}）${q.stale?"，请同步最新数据":""}。缓存区间内缺 ${q.missing_issues.length} 期。` : "尚无开奖数据。可同步体彩官方数据，或在开奖历史中导入已核实的 JSON 数据。CSV 可通过命令行导入。";
   return true;
 }
 function renderAuth() {
   const required=state.overview?.admin_token_required, token=sessionStorage.getItem("dlt-admin-token");
   $("auth-status").hidden=!required;
-  $("auth-status").innerHTML=token?'已填写管理员令牌；可在 <a href="#settings">系统设置</a> 验证或退出。':'当前可浏览数据。生成、模拟、回测、同步和保存需要管理员令牌，请先在 <a href="#settings">系统设置</a> 验证登录。';
+  $("auth-status").innerHTML=token?'已填写管理员令牌；可在 <a href="#settings">系统设置</a> 验证或退出。':'号码池与排序、开奖历史可以浏览。同步开奖需要管理员令牌，请先在 <a href="#settings">系统设置</a> 验证登录。';
 }
 function title(eyebrow, heading, subtitle, right="") {return `<div class="page-title"><div><div class="eyebrow">${eyebrow}</div><h1>${heading}</h1><div class="subtitle">${subtitle}</div></div>${right}</div>`;}
 function balls(front, back, draw=null) {
@@ -334,7 +334,7 @@ function renderStats() {
 }
 function settings() {
   content.innerHTML=title("SYSTEM SETTINGS","可复现，也可核验","管理生成种子、访问令牌与数据导出。已保存方案保留原始票面。")+
-    `<div class="grid grid-2"><div class="card"><h2>生成主种子</h2><form id="seed-form"><label class="field">当前种子<input id="seed" type="text" inputmode="numeric" pattern="[0-9]+" value="${escapeHTML(state.config.seed)}" required><small>更改种子只影响此后生成的预览，已归档记录保持原样。</small></label><button id="save-seed" class="button button-primary margin-top">保存主种子</button></form></div><div class="card"><h2>管理员访问</h2><form id="token-form"><label class="field">管理员令牌<input id="admin-token" type="password" autocomplete="off" value="${escapeHTML(sessionStorage.getItem("dlt-admin-token")||"")}" placeholder="LOTTERY_ADMIN_TOKEN"><small>${state.overview.admin_token_required?"当前服务的写入与完整数据导出需要管理员令牌。":"当前为本机模式，无需令牌即可操作。"}令牌只存放在当前标签页的会话存储中。</small></label><div class="actions margin-top"><button class="button">验证并在当前标签页使用</button><button id="clear-token" class="button" type="button">退出管理员</button></div></form></div></div><div class="card"><h2>数据与完整性</h2><p class="muted">数据持久化在 SQLite，保存方案采用内容摘要与审计链校验。导出包含开奖、配置和实际方案，可离线查看；完整数据库备份请使用 SQLite 在线备份命令。</p><div class="actions"><button id="export-data" class="button button-primary">校验并导出全部 JSON</button><button id="sync-settings" class="button">同步最近100期</button></div><p class="muted margin-top">本机哈希用于检查内容一致性；若需要独立的开奖前时间证明，应把摘要留到可信外部时间记录。</p></div><div class="card"><h2>版本与规则</h2><p class="muted">lottery-dlt 1.9.0 · 全 Rust 后端 · 本地静态资源 · 生成规则 dlt-plan-v3</p><p class="muted">26014期起为七奖级规则。新规则按开奖前8亿元奖池门槛分档；一、二等奖为浮动奖。奖金优先使用各期公告，当前不自动核算活动派奖及税。</p></div>`;
+    `<div class="grid grid-2"><div class="card"><h2>生成主种子</h2><form id="seed-form"><label class="field">当前种子<input id="seed" type="text" inputmode="numeric" pattern="[0-9]+" value="${escapeHTML(state.config.seed)}" required><small>更改种子只影响此后生成的预览，已归档记录保持原样。</small></label><button id="save-seed" class="button button-primary margin-top">保存主种子</button></form></div><div class="card"><h2>管理员访问</h2><form id="token-form"><label class="field">管理员令牌<input id="admin-token" type="password" autocomplete="off" value="${escapeHTML(sessionStorage.getItem("dlt-admin-token")||"")}" placeholder="LOTTERY_ADMIN_TOKEN"><small>${state.overview.admin_token_required?"当前服务的写入与完整数据导出需要管理员令牌。":"当前为本机模式，无需令牌即可操作。"}令牌只存放在当前标签页的会话存储中。</small></label><div class="actions margin-top"><button class="button">验证并在当前标签页使用</button><button id="clear-token" class="button" type="button">退出管理员</button></div></form></div></div><div class="card"><h2>数据与完整性</h2><p class="muted">数据持久化在 SQLite，保存方案采用内容摘要与审计链校验。导出包含开奖、配置和实际方案，可离线查看；完整数据库备份请使用 SQLite 在线备份命令。</p><div class="actions"><button id="export-data" class="button button-primary">校验并导出全部 JSON</button><button id="sync-settings" class="button">同步最近100期</button></div><p class="muted margin-top">本机哈希用于检查内容一致性；若需要独立的开奖前时间证明，应把摘要留到可信外部时间记录。</p></div><div class="card"><h2>版本与规则</h2><p class="muted">lottery-dlt 1.10.0 · 全 Rust 后端 · 本地静态资源 · 号码池与排序</p><p class="muted">26014期起为七奖级规则。新规则按开奖前8亿元奖池门槛分档；一、二等奖为浮动奖。奖金优先使用各期公告，当前不自动核算活动派奖及税。</p></div>`;
   $("seed-form").onsubmit=e=>{e.preventDefault();action($("save-seed"),async()=>{const config=await api("config",{seed:$("seed").value.trim()},"PUT");state.snapshotRevision=(state.snapshotRevision||0)+1;state.config=config;state.plan=null;toast("主种子已更新，请重新生成方案。");});};
   $("token-form").onsubmit=e=>{e.preventDefault();action($("token-form").querySelector("button"),async()=>{const token=$("admin-token").value.trim();await api("auth",undefined,"GET",token);sessionStorage.setItem("dlt-admin-token",token);renderAuth();toast("管理员令牌验证通过。");});};
   $("clear-token").onclick=()=>{sessionStorage.removeItem("dlt-admin-token");$("admin-token").value="";renderAuth();toast("已退出当前标签页的管理员访问。");};
@@ -353,11 +353,13 @@ async function render() {
     if(state.tab==="records"){const r=await api(`records?page=${state.recordPage}&limit=20&kind=personal&issue=${encodeURIComponent(state.recordFilter)}&status=${encodeURIComponent(state.recordStatus)}`);if(revision!==state.renderRevision)return false;state.records=r.records;state.recordTotal=r.total;state.draws=r.draws;}
     if(state.tab==="reviews"){const r=await api(`recommendations?page=${state.reviewPage}&limit=5&issue=${encodeURIComponent(state.reviewFilter)}`);if(revision!==state.renderRevision)return false;state.recommendations=r;state.reviewTotal=r.total;state.draws=r.draws;state.liveReview=null;state.liveReviewError="";}
     if(revision!==state.renderRevision)return false;
-    ({generator,records:()=>records(false),reviews:()=>records(true),draws:drawHistory,backtest:backtestView,research:researchView,settings}[state.tab])();
+    const view={pools:renderNumberPools,draws:drawHistory,settings}[state.tab];
+    const result=view();
+    if(result&&typeof result.then==="function")await result;
     accessibleTables();scrollReviewAnchor();return true;
   } catch(e){if(revision!==state.renderRevision)return false;renderReadFailure(e);toast(e.message,true);return false;}
 }
-function readTab() {const id=location.hash.slice(1)|| (location.pathname.endsWith("/reviews")?"reviews":"generator");state.tab=id.startsWith("saved-")?"records":["live-review","budget-increments","replacement-review","source-overlap","stability-review","pool-intersection","recommendation-records"].includes(id)||id.startsWith("record-")?"reviews":tabs.some(t=>t[0]===id)?id:"generator";}
+function readTab() {const id=location.hash.slice(1);state.tab=tabs.some(t=>t[0]===id)?id:"pools";}
 window.addEventListener("hashchange",async()=>{const previous=state.tab;readTab();if(previous==="reviews"&&state.tab==="reviews"){scrollReviewAnchor();return;}const tab=state.tab;await render();if(tab===state.tab&&tabs.some(t=>t[0]===location.hash.slice(1))){const heading=content.querySelector("h1");if(heading){heading.tabIndex=-1;heading.focus({preventScroll:true});}window.scrollTo(0,0);}});
 document.addEventListener("keydown",event=>{if(event.key==="Escape")$("toast").hidden=true;});
 $("sync-top").onclick=()=>syncDraws($("sync-top"));
